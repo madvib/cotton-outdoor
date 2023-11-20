@@ -8,8 +8,8 @@ services:
 
     volumes:
       - ../..:/workspaces:cached
-      - backend_node_modules:/workspaces/cotton-outdoor-site/backend/node_modules
-      - storefront_node_modules:/workspaces/cotton-outdoor-site/storefront/node_modules
+      - backend_node_modules:/workspaces/open-outdoor/backend/node_modules
+      - storefront_node_modules:/workspaces/open-outdoor/storefront/node_modules
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
