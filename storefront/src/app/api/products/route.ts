@@ -19,7 +19,15 @@ export async function GET(request: NextRequest) {
     return notFound()
   }
 
-  return NextResponse.json(response)
+  const res = NextResponse.json(response)
+  res.headers.set("Access-Control-Allow-Origin", "*")
+  res.headers.set(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  )
+  res.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+  return res
 }
 
 async function getProducts(params: Record<string, any>) {
