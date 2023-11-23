@@ -6,7 +6,7 @@ module.exports = withStoreConfig({
     return [
       {
         // matching all API routes
-        source: "/api/:path*",
+        source: "/app/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
@@ -44,6 +44,10 @@ module.exports = withStoreConfig({
       {
         protocol: "https",
         hostname: "medusa-server-testing.s3.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-server-testing.s3.us-east-1.amazonaws.com",
       },
     ],
   },

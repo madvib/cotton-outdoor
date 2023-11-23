@@ -19,15 +19,7 @@ export async function GET(request: NextRequest) {
     return notFound()
   }
 
-  const res = NextResponse.json(response)
-  res.headers.set("Access-Control-Allow-Origin", "*")
-  res.headers.set(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  )
-  res.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-
-  return res
+  return NextResponse.json(response)
 }
 
 async function getProducts(params: Record<string, any>) {
@@ -47,6 +39,7 @@ async function getProducts(params: Record<string, any>) {
     sharedResourcesConfig: {
       database: { clientUrl: process.env.POSTGRES_URL },
     },
+    injectedDependencies: {},
   })
 
   // Set the filters for the query
