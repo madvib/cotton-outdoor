@@ -26,12 +26,12 @@
   },
   "dependencies": {
     "@medusajs/admin": "7.1.7",
-    "@medusajs/cache-inmemory": "^1.8.9",
-    "@medusajs/cache-redis": "^1.8.9",
+    "@medusajs/cache-inmemory": "^1.8.10",
+    "@medusajs/cache-redis": "^1.9.0",
     "@medusajs/event-bus-local": "^1.9.7",
     "@medusajs/event-bus-redis": "^1.8.10",
     "@medusajs/file-local": "^1.0.2",
-    "@medusajs/medusa": "1.17.4",
+    "@medusajs/medusa": "1.18.0",
     "@tanstack/react-query": "4.22.0",
     "babel-preset-medusa-package": "^1.1.19",
     "body-parser": "^1.19.0",
@@ -41,7 +41,7 @@
     "medusa-fulfillment-manual": "^1.1.38",
     "medusa-interfaces": "^1.3.7",
     "medusa-payment-manual": "^1.0.24",
-    "medusa-payment-stripe": "^6.0.5",
+    "medusa-payment-stripe": "^6.0.6",
     "prism-react-renderer": "^2.0.4",
     "typeorm": "^0.3.16"
   },
@@ -87,6 +87,5 @@
     ],
     "coverageDirectory": "./coverage",
     "testEnvironment": "node"
-  },
-  "packageManager": "yarn@3.6.4"
+  }
 }

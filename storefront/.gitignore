@@ -46,3 +46,6 @@ node_modules
 .yarn
 .swc
 dump.rdb
+
+# serverless modules until v2 migration is ready
+/src/app/api

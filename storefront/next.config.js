@@ -31,6 +31,7 @@ module.exports = withStoreConfig({
   },
   features: store.features,
   reactStrictMode: true,
+
   images: {
     remotePatterns: [
       {
