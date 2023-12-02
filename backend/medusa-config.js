@@ -49,7 +49,47 @@ const plugins = [
       autoRebuild: true,
       serve: false,
       develop: {
-        open: process.env.OPEN_BROWSER !== 'false',
+        open: false,
+      },
+    },
+  },
+  {
+    resolve: 'medusa-file-r2',
+    options: {
+      account_id: process.env.CLOUDFLARE_R2_ACCOUNT_ID,
+      access_key: process.env.CLOUDFLARE_R2_ACCESS_KEY,
+      secret_key: process.env.CLOUDFLARE_R2_SECRET_KEY,
+      bucket: process.env.CLOUDFLARE_R2_BUCKET,
+      public_url: process.env.CLOUDFLARE_R2_PUBLIC_URL,
+    },
+  },
+  {
+    resolve: `medusa-plugin-meilisearch`,
+    options: {
+      // config object passed when creating an instance
+      // of the MeiliSearch client
+      config: {
+        host: process.env.MEILISEARCH_HOST,
+        apiKey: process.env.MEILISEARCH_API_KEY,
+      },
+      settings: {
+        products: {
+          indexSettings: {
+            searchableAttributes: ['title', 'description', 'variant_sku'],
+            displayedAttributes: [
+              'title',
+              'description',
+              'variant_sku',
+              'thumbnail',
+              'handle',
+            ],
+          },
+          primaryKey: 'id',
+          transformer: (product) => ({
+            id: product.id,
+            // other attributes...
+          }),
+        },
       },
     },
   },
