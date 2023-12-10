@@ -52,7 +52,7 @@ const Register = () => {
       <h1 className="text-large-semi uppercase mb-6">
         Become a Open Outdoors Member
       </h1>
-      <p className="text-center text-base-regular text-gray-700 mb-4">
+      <p className="text-center text-base-regular text-base-content mb-4">
         Create your Open Outdoors Member profile, and get access to an enhanced
         shopping experience.
       </p>
@@ -99,7 +99,7 @@ const Register = () => {
             </span>
           </div>
         )}
-        <span className="text-center text-gray-700 text-small-regular mt-6">
+        <span className="text-center text-base-content text-small-regular mt-6">
           By creating an account, you agree to Open Outdoors&apos;s{" "}
           <Link href="/content/privacy-policy" className="underline">
             Privacy Policy
@@ -114,7 +114,7 @@ const Register = () => {
           Join
         </Button>
       </form>
-      <span className="text-center text-gray-700 text-small-regular mt-6">
+      <span className="text-center text-base-content text-small-regular mt-6">
         Already a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}

@@ -29,7 +29,7 @@ const MobileHits = ({
 
   return (
     <div className={className}>
-      <span className="text-small-regular uppercase text-gray-700">
+      <span className="text-small-regular uppercase text-base-content">
         Results
       </span>
       <div className="flex flex-col gap-6 py-4">

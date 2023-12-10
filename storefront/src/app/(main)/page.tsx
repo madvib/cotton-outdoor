@@ -7,8 +7,7 @@ import { Suspense } from "react"
 
 export const metadata: Metadata = {
   title: "Open Outdoors",
-  description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+  description: "Open Outdoors Storefront",
 }
 
 export default async function Home() {

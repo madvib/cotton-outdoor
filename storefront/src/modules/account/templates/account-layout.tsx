@@ -15,7 +15,7 @@ const AccountLayout: React.FC = ({ children }) => {
 
   if (retrievingCustomer || !customer) {
     return (
-      <div className="flex items-center justify-center w-full min-h-[640px] h-full text-gray-900">
+      <div className="flex items-center justify-center w-full min-h-[640px] h-full text-neutral-content">
         <Spinner size={36} />
       </div>
     )

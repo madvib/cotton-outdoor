@@ -20,7 +20,7 @@ const Container = ({ children }: ContainerProps) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Dialog.Overlay className="absolute inset-0 bg-gray-700 bg-opacity-75 transition-opacity backdrop-blur-sm" />
+          <Dialog.Overlay className="absolute inset-0 bg-base-100 bg-opacity-75 transition-opacity backdrop-blur-sm" />
         </Transition.Child>
 
         <Transition.Child
@@ -34,7 +34,7 @@ const Container = ({ children }: ContainerProps) => {
         >
           <div className="absolute inset-0 overflow-hidden trans">
             <div className="pointer-events-none fixed inset-y-0 right-left flex max-w-full">
-              <div className="relative w-screen pointer-events-auto bg-white text-gray-900 flex flex-col overflow-y-auto">
+              <div className="relative w-screen pointer-events-auto bg-base-100 text-neutral-content flex flex-col overflow-y-auto">
                 {children}
               </div>
             </div>

@@ -24,8 +24,8 @@ const MainMenu = () => {
   const setScreenSearch = () => setScreen("search")
 
   return (
-    <div className="flex flex-col flex-1">
-      <div className="flex items-center justify-between w-full border-b border-gray-200 p-6">
+    <div className="flex flex-col flex-1 bg-base-100">
+      <div className="flex items-center justify-between w-full border-b bg-base-100 p-6">
         <div className="flex-1 basis-0">
           <button
             className="flex items-center gap-x-2"
@@ -36,11 +36,11 @@ const MainMenu = () => {
           </button>
         </div>
 
-        <Heading className="txt-compact-xlarge-plus text-ui-fg-subtle uppercase">
+        <Heading className="font-logo text-4xl text-primary uppercase">
           Open Outdoors
         </Heading>
 
-        <div className="flex-1 basis-0 flex justify-end">
+        <div className="flex-1 basis-0 flex justify-end text-base-content hover:text-secondary">
           <button onClick={close}>
             <X />
           </button>
@@ -50,7 +50,7 @@ const MainMenu = () => {
       <div className="space-y-6 flex-1 flex flex-col justify-between p-6">
         {process.env.FEATURE_SEARCH_ENABLED && (
           <button
-            className="bg-gray-50 flex items-center px-4 py-2 gap-x-2 text-ui-fg-muted rounded-rounded"
+            className="bg-base-300 flex items-center px-4 py-2 gap-x-2 text-ui-fg-muted rounded-rounded"
             onClick={setScreenSearch}
           >
             <MagnifyingGlassMini />
@@ -60,9 +60,9 @@ const MainMenu = () => {
           </button>
         )}
 
-        <div className="flex flex-col flex-1 text-large-regular text-gray-900">
+        <div className="flex flex-col flex-1 text-large-regular text-neutral-content">
           <ul className="flex flex-col gap-y-2">
-            <li className="bg-gray-50 p-4 rounded-rounded">
+            <li className="bg-base-300 p-4 rounded-rounded">
               <Link href="/store">
                 <button
                   className="flex items-center justify-between w-full"
@@ -104,7 +104,7 @@ const MainMenu = () => {
           <div className="flex flex-col gap-y-8 text-small-regular">
             {!customer ? (
               <div className="flex flex-col gap-y-4 ">
-                <span className="text-gray-700 uppercase">Account</span>
+                <span className="text-base-content uppercase">Account</span>
                 <Link href={`/account/login`} passHref>
                   <button
                     className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
@@ -118,7 +118,9 @@ const MainMenu = () => {
               </div>
             ) : (
               <div className="flex flex-col gap-y-4">
-                <span className="text-gray-700 uppercase">Signed in as</span>
+                <span className="text-base-content uppercase">
+                  Signed in as
+                </span>
                 <Link href={`/account`} passHref>
                   <button
                     className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
@@ -132,7 +134,7 @@ const MainMenu = () => {
               </div>
             )}
             <div className="flex flex-col gap-y-4">
-              <span className="text-gray-700 uppercase">Delivery</span>
+              <span className="text-base-content uppercase">Delivery</span>
               <button
                 className="flex items-center justify-between border-b border-gray-200 py-2"
                 onClick={setScreenCountry}

@@ -90,7 +90,7 @@ const Title: React.FC = ({ children }) => {
 
 const Description: React.FC = ({ children }) => {
   return (
-    <Dialog.Description className="flex text-small-regular text-gray-700 items-center justify-center pt-2 pb-4 h-full">
+    <Dialog.Description className="flex text-small-regular text-base-content items-center justify-center pt-2 pb-4 h-full">
       {children}
     </Dialog.Description>
   )

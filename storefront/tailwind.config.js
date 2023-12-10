@@ -1,5 +1,3 @@
-const path = require("path")
-
 module.exports = {
   presets: [require("@medusajs/ui-preset")],
   content: [
@@ -9,6 +7,18 @@ module.exports = {
     "./src/modules/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
   ],
+  daisyui: {
+    themes: [
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["dim"],
+        },
+        light: {
+          ...require("daisyui/src/theming/themes")["acid"],
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
       transitionProperty: {
@@ -68,6 +78,7 @@ module.exports = {
           "Ubuntu",
           "sans-serif",
         ],
+        logo: [`var(--font-tourney)`],
       },
       keyframes: {
         ring: {
@@ -157,5 +168,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-radix")()],
+  plugins: [require("tailwindcss-radix"), require("daisyui")],
 }

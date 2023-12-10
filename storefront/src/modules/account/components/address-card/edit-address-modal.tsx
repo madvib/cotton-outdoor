@@ -110,7 +110,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
             {address.first_name} {address.last_name}
           </Heading>
           {address.company && (
-            <Text className="txt-compact-small text-gray-700">
+            <Text className="txt-compact-small text-base-content">
               {address.company}
             </Text>
           )}
@@ -130,14 +130,14 @@ const EditAddress: React.FC<EditAddressProps> = ({
         </div>
         <div className="flex items-center gap-x-4">
           <button
-            className="text-small-regular text-gray-700 flex items-center gap-x-2"
+            className="text-small-regular text-base-content flex items-center gap-x-2"
             onClick={open}
           >
             <Edit />
             Edit
           </button>
           <button
-            className="text-small-regular text-gray-700 flex items-center gap-x-2"
+            className="text-small-regular text-base-content flex items-center gap-x-2"
             onClick={removeAddress}
           >
             <Trash />

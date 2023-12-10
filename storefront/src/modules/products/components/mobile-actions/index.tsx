@@ -50,7 +50,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
               <span>{product.title}</span>
               <span>—</span>
               {selectedPrice ? (
-                <div className="flex items-end gap-x-2 text-gray-700">
+                <div className="flex items-end gap-x-2 text-base-content">
                   {selectedPrice.price_type === "sale" && (
                     <p>
                       <span className="line-through text-small-regular">
@@ -118,7 +118,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                   <div className="w-full flex justify-end pr-6">
                     <button
                       onClick={close}
-                      className="bg-white w-12 h-12 rounded-full text-gray-900 flex justify-center items-center"
+                      className="bg-white w-12 h-12 rounded-full text-neutral-content flex justify-center items-center"
                     >
                       <X />
                     </button>

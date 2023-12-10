@@ -50,7 +50,7 @@ const AccountNav = () => {
                   Orders
                 </AccountNavLink>
               </li>
-              <li className="text-grey-700">
+              <li className="text-base-content">
                 <button type="button" onClick={handleLogout}>
                   Log out
                 </button>
@@ -74,8 +74,8 @@ const AccountNavLink = ({ href, route, children }: AccountNavLinkProps) => {
   return (
     <Link
       href={href}
-      className={clsx("text-gray-700", {
-        "text-gray-900 font-semibold": active,
+      className={clsx("text-base-content", {
+        "text-neutral-content font-semibold": active,
       })}
     >
       <>{children}</>

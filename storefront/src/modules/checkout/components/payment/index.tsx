@@ -202,7 +202,7 @@ const Payment = () => {
             </Button>
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center px-4 py-16 text-gray-900">
+          <div className="flex flex-col items-center justify-center px-4 py-16 text-neutral-content">
             <Spinner />
           </div>
         )}

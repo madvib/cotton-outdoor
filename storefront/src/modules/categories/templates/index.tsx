@@ -73,7 +73,7 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
       <div className="flex flex-row mb-8 text-2xl-semi gap-4">
         {parents &&
           parents.map((parent) => (
-            <span key={parent.id} className="text-gray-500">
+            <span key={parent.id} className="text-base-content">
               <Link
                 className="mr-4 hover:text-black"
                 href={`/${parent.handle}`}
@@ -115,7 +115,7 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
           ))}
       </ul>
       <div
-        className="py-16 flex justify-center items-center text-small-regular text-gray-700"
+        className="py-16 flex justify-center items-center text-small-regular text-base-content"
         ref={ref}
       >
         <span ref={ref}></span>

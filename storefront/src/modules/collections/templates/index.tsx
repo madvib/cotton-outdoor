@@ -75,7 +75,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
           ))}
       </ul>
       <div
-        className="py-16 flex justify-center items-center text-small-regular text-gray-700"
+        className="py-16 flex justify-center items-center text-small-regular text-base-content"
         ref={ref}
       >
         <span ref={ref}></span>

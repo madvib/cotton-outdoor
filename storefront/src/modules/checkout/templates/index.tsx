@@ -16,7 +16,7 @@ const CheckoutTemplate = () => {
           <nav className="flex items-center h-full justify-between content-container border-b">
             <Link
               href="/cart"
-              className="text-small-semi text-gray-700 flex items-center gap-x-2 uppercase flex-1 basis-0"
+              className="text-small-semi text-base-content flex items-center gap-x-2 uppercase flex-1 basis-0"
             >
               <>
                 <ChevronDown className="rotate-90" size={16} />

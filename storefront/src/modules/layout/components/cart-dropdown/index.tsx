@@ -22,7 +22,7 @@ const CartDropdown = () => {
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <Link
-            className="hover:text-ui-fg-base"
+            className="text-base-content hover:text-secondary"
             href="/cart"
           >{`Cart (${totalItems})`}</Link>
         </Popover.Button>
@@ -38,10 +38,12 @@ const CartDropdown = () => {
         >
           <Popover.Panel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[382px] text-gray-900"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-base-200 border-x border-b border-base-300 w-[382px] text-base-content"
           >
             <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Cart</h3>
+              <h3 className="text-large-semitext-base-content hover:text-secondary">
+                Cart
+              </h3>
             </div>
             {cart && items?.length ? (
               <>
@@ -88,7 +90,7 @@ const CartDropdown = () => {
                           <div className="flex items-end justify-between text-small-regular flex-1">
                             <div>
                               <button
-                                className="flex items-center gap-x-1 text-gray-500"
+                                className="flex items-center gap-x-1 text-base-content"
                                 onClick={() => deleteItem(item.id)}
                               >
                                 <Trash size={14} />
@@ -102,7 +104,7 @@ const CartDropdown = () => {
                 </div>
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-700 font-semibold">
+                    <span className="text-base-content font-semibold">
                       Subtotal{" "}
                       <span className="font-normal">(excl. taxes)</span>
                     </span>

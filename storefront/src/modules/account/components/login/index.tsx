@@ -41,12 +41,12 @@ const Login = () => {
   return (
     <div className="max-w-sm w-full flex flex-col items-center">
       {isSubmitting && (
-        <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+        <div className="z-10 fixed inset-0 bg-neutral bg-opacity-50 flex items-center justify-center">
           <Spinner />
         </div>
       )}
       <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-gray-700 mb-8">
+      <p className="text-center text-base-regular text-base-content mb-8">
         Sign in to access an enhanced shopping experience.
       </p>
       <form className="w-full" onSubmit={onSubmit}>
@@ -76,7 +76,7 @@ const Login = () => {
           Enter
         </Button>
       </form>
-      <span className="text-center text-gray-700 text-small-regular mt-6">
+      <span className="text-center text-base-content text-small-regular mt-6">
         Not a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}

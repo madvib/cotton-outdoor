@@ -165,14 +165,14 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
                           {option.label}
                         </span>
                       </div>
-                      <span className="justify-self-end text-gray-700">
+                      <span className="justify-self-end text-base-content">
                         {option.price}
                       </span>
                     </RadioGroup.Option>
                   )
                 })
               ) : (
-                <div className="flex flex-col items-center justify-center px-4 py-8 text-gray-900">
+                <div className="flex flex-col items-center justify-center px-4 py-8 text-neutral-content">
                   <Spinner />
                 </div>
               )}

@@ -15,7 +15,7 @@ const SubmitSpinner = () => {
         <div className="flex flex-col items-center justify-center gap-y-6">
           <div className="flex items-center gap-x-3">
             <Spinner className="animate-spin" />
-            <Heading className="text-gray-900 text-2xl font-medium">
+            <Heading className="text-neutral-content text-2xl font-medium">
               Please wait...
             </Heading>
           </div>
