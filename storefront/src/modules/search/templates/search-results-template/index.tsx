@@ -34,7 +34,7 @@ const SearchResultsTemplate = ({ query, hits }: SearchResultsTemplateProps) => {
         </div>
         <Link
           href="/store"
-          className="txt-medium text-ui-fg-subtle hover:text-ui-fg-base"
+          className="text-medium text-base-content hover:text-ui-fg-base"
         >
           Clear
         </Link>

@@ -16,14 +16,11 @@ const CheckoutSummary = () => {
 
   return (
     <div className="sticky top-0 flex flex-col-reverse small:flex-col gap-y-8 py-8 px-4 small:py-0 small:pr-8 ">
-      <div className="w-full bg-white flex flex-col">
+      <div className="w-full bg-base-100 flex flex-col">
         <Divider className="my-6 small:hidden" />
-        <Heading
-          level="h2"
-          className="flex flex-row text-3xl-regular items-baseline"
-        >
+        <h2 className="flex flex-row text-3xl-regular items-baseline">
           In your Cart
-        </Heading>
+        </h2>
         <Divider className="my-6" />
         <CartTotals data={cart} />
         <ItemsPreviewTemplate region={cart?.region} items={cart?.items} />

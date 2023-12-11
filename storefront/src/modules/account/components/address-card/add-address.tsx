@@ -173,7 +173,7 @@ const AddAddress: React.FC = () => {
             />
           </div>
           {error && (
-            <div className="text-rose-500 text-small-regular py-2">{error}</div>
+            <div className="text-error text-small-regular py-2">{error}</div>
           )}
         </Modal.Body>
         <Modal.Footer>

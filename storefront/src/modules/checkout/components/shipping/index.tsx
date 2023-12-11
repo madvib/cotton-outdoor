@@ -1,6 +1,6 @@
 import { useCheckout } from "@lib/context/checkout-context"
-import { Button, Heading, Text, clx } from "@medusajs/ui"
 import { CheckCircleSolid } from "@medusajs/icons"
+import clsx from "clsx"
 import Spinner from "@modules/common/icons/spinner"
 import Divider from "@modules/common/components/divider"
 import { useForm } from "react-hook-form"
@@ -113,11 +113,10 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
   }, [shipping_options, cart])
 
   return (
-    <div className="bg-white p-4 small:px-8">
+    <div className="bg-base-100 p-4 small:px-8">
       <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className={clx(
+        <h2
+          className={clsx(
             "flex flex-row text-3xl-regular gap-x-2 items-baseline",
             {
               "opacity-50 pointer-events-none select-none":
@@ -129,13 +128,11 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
           {!isOpen && currentShippingOption && shippingReady && (
             <CheckCircleSolid />
           )}
-        </Heading>
+        </h2>
         {!isOpen && addressReady && (
-          <Text>
-            <button onClick={handleEdit} className="text-ui-fg-interactive">
-              Edit
-            </button>
-          </Text>
+          <button onClick={handleEdit} className="text-accent text-sm">
+            Edit
+          </button>
         )}
       </div>
       {!editingOtherSteps && isOpen ? (
@@ -151,11 +148,10 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
                     <RadioGroup.Option
                       key={option.value}
                       value={option.value}
-                      className={clx(
-                        "flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active",
+                      className={clsx(
+                        "flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:border-accent",
                         {
-                          "border-ui-border-interactive":
-                            option.value === shippingOptionId,
+                          "border-accent": option.value === shippingOptionId,
                         }
                       )}
                     >
@@ -182,7 +178,7 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
               name="soId"
               render={({ message }) => {
                 return (
-                  <div className="pt-2 text-rose-500 text-small-regular">
+                  <div className="pt-2 text-error text-small-regular">
                     <span>{message}</span>
                   </div>
                 )
@@ -190,32 +186,29 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
             />
           </div>
 
-          <Button
-            size="large"
-            className="mt-6"
+          <button
+            className="btn mt-6"
             onClick={() => submitShippingOption(shippingOptionId)}
           >
             Continue to payment
-          </Button>
+          </button>
         </div>
       ) : (
         <div>
-          <div className="text-small-regular">
+          <div className="text-sm font-normal">
             {cart && shippingReady && (
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                  Method
-                </Text>
-                <Text className="txt-medium text-ui-fg-subtle">
+                <p className="text-base text-primary mb-1">Method</p>
+                <p className="text-sm font-normal text-base-content">
                   {cart.shipping_methods[0].shipping_option.name} (
                   {formatAmount({
                     amount: cart.shipping_methods[0].price,
                     region: cart.region,
                   })
                     .replace(/,/g, "")
-                    .replace(/\./g, ",")}
+                    .replace(/\./g, ".")}
                   )
-                </Text>
+                </p>
               </div>
             )}
           </div>

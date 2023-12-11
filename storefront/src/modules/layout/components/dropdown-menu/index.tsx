@@ -54,7 +54,7 @@ const DropdownMenu = () => {
                 static
                 className="absolute top-full inset-x-0 text-sm text-base-content z-30 border-y border-gray-200"
               >
-                <div className="relative bg-white py-8">
+                <div className="relative bg-base-100 py-8">
                   <div className="flex items-start content-container">
                     <div className="flex flex-col flex-1 max-w-[30%]">
                       <h3 className="text-base-semi text-neutral-content mb-4">

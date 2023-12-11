@@ -14,16 +14,20 @@ const CheckboxWithLabel: React.FC<CheckboxProps> = ({
 }) => {
   return (
     <div className="flex items-center space-x-2">
-      <Checkbox
-        className="text-base-regular flex items-center gap-x-2"
-        id="checkbox"
-        role="checkbox"
-        type="button"
-        checked={checked}
-        aria-checked={checked}
-        onClick={onChange}
-      />
-      <Label htmlFor="checkbox">{label}</Label>
+      <div className="form-control">
+        <label className="cursor-pointer label">
+          <input
+            className="checkbox checkbox-sm checkbox-accent mr-2"
+            id="checkbox"
+            role="checkbox"
+            type="checkbox"
+            checked={checked}
+            aria-checked={checked}
+            onChange={onChange}
+          />
+          <span className="label-text">{label}</span>
+        </label>
+      </div>
     </div>
   )
 }

@@ -6,13 +6,14 @@ import CheckoutLoader from "../components/checkout-loader"
 import CheckoutForm from "./checkout-form"
 import CheckoutSummary from "./checkout-summary"
 import SubmitSpinner from "../components/submit-spinner"
+import Logo from "@modules/common/components/logo"
 
 const CheckoutTemplate = () => {
   return (
     <CheckoutProvider>
-      <div className="bg-white relative small:min-h-screen">
+      <div className="bg-base-100 relative small:min-h-screen">
         <SubmitSpinner />
-        <div className="h-16 bg-white">
+        <div className="h-16 bg-base-100">
           <nav className="flex items-center h-full justify-between content-container border-b">
             <Link
               href="/cart"
@@ -20,18 +21,13 @@ const CheckoutTemplate = () => {
             >
               <>
                 <ChevronDown className="rotate-90" size={16} />
-                <span className="mt-px hidden small:block txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase">
+                <span className="mt-px hidden small:block txt-compact-plus text-base-content hover:text-secondary uppercase">
                   Back to shopping cart
                 </span>
                 <span className="mt-px block small:hidden">Back</span>
               </>
             </Link>
-            <Link
-              href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
-            >
-              Open Outdoors
-            </Link>
+            <Logo />
             <div className="flex-1 basis-0" />
           </nav>
         </div>

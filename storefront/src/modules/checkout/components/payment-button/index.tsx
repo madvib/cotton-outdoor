@@ -130,7 +130,7 @@ const StripePaymentButton = ({
         Place order
       </Button>
       {errorMessage && (
-        <div className="text-red-500 text-small-regular mt-2">
+        <div className="text-red-500 text-sm font-normal mt-2">
           {errorMessage}
         </div>
       )}
@@ -183,9 +183,7 @@ const PayPalPaymentButton = ({
         intent: "authorize",
       }}
     >
-      {errorMessage && (
-        <span className="text-rose-500 mt-4">{errorMessage}</span>
-      )}
+      {errorMessage && <span className="text-error mt-4">{errorMessage}</span>}
       <PayPalButtons
         style={{ layout: "horizontal" }}
         createOrder={async () => session.data.id as string}

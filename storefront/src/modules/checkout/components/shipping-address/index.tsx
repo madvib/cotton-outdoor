@@ -6,7 +6,6 @@ import { useMeCustomer } from "medusa-react"
 import AddressSelect from "../address-select"
 import CountrySelect from "../country-select"
 import Checkbox from "@modules/common/components/checkbox"
-import { Container } from "@medusajs/ui"
 
 const ShippingAddress = ({
   checked,
@@ -20,12 +19,12 @@ const ShippingAddress = ({
   return (
     <div>
       {customer && (customer.shipping_addresses?.length || 0) > 0 && (
-        <Container className="mb-6 flex flex-col gap-y-4 p-5">
+        <div className="mb-6 flex flex-col gap-y-4 p-5">
           <p className="text-small-regular">
             {`Hi ${customer.first_name}, do you want to use one of your saved addresses?`}
           </p>
           <AddressSelect addresses={customer.shipping_addresses} />
-        </Container>
+        </div>
       )}
       <ConnectForm<CheckoutFormValues>>
         {({ register, formState: { errors, touchedFields } }) => (
@@ -105,6 +104,7 @@ const ShippingAddress = ({
                 touched={touchedFields}
               />
             </div>
+
             <div className="my-8">
               <Checkbox
                 label="Same as billing address"

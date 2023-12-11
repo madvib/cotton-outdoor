@@ -59,7 +59,7 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             "relative flex items-center txt-compact-small border text-ui-fg-base group",
             className,
             {
-              "text-ui-fg-subtle": isPlaceholder,
+              "text-accent": isPlaceholder,
             }
           )}
         >
@@ -83,7 +83,7 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             name={props.name}
             render={({ message }) => {
               return (
-                <div className="pt-1 pl-2 text-rose-500 text-xsmall-regular">
+                <div className="pt-1 pl-2 text-error text-xsmall-regular">
                   <span>{message}</span>
                 </div>
               )

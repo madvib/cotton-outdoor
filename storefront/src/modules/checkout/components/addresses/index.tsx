@@ -1,5 +1,4 @@
 import { useCheckout } from "@lib/context/checkout-context"
-import { Button, Heading, Text } from "@medusajs/ui"
 import { CheckCircleSolid } from "@medusajs/icons"
 import Spinner from "@modules/common/icons/spinner"
 import BillingAddress from "../billing_address"
@@ -24,21 +23,16 @@ const Addresses = () => {
   }
 
   return (
-    <div className="bg-white px-4 small:px-8">
+    <div className="bg-base-100 px-4 small:px-8">
       <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
-        >
+        <h2 className="flex flex-row text-3xl-regular gap-x-2 items-baseline">
           Address
           {!isOpen && <CheckCircleSolid />}
-        </Heading>
+        </h2>
         {!isOpen && (
-          <Text>
-            <button onClick={handleEdit} className="text-ui-fg-interactive">
-              Edit
-            </button>
-          </Text>
+          <button onClick={handleEdit} className="text-accent text-sm">
+            Edit
+          </button>
         )}
       </div>
       {isOpen ? (
@@ -47,24 +41,17 @@ const Addresses = () => {
 
           {!checked && (
             <div>
-              <Heading
-                level="h2"
-                className="text-3xl-regular gap-x-4 pb-6 pt-8"
-              >
+              <h2 className="text-3xl-regular gap-x-4 pb-6 pt-8">
                 Billing address
-              </Heading>
+              </h2>
 
               <BillingAddress />
             </div>
           )}
 
-          <Button
-            size="large"
-            className="mt-6"
-            onClick={handleSubmit(setAddresses)}
-          >
+          <button className="btn mt-6" onClick={handleSubmit(setAddresses)}>
             Continue to delivery
-          </Button>
+          </button>
         </div>
       ) : (
         <div>
@@ -73,64 +60,60 @@ const Addresses = () => {
               <div className="flex items-start gap-x-8">
                 <div className="flex items-start gap-x-1 w-full">
                   <div className="flex flex-col w-1/3">
-                    <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                    <p className="txt-medium-plus text-primary mb-1">
                       Shipping Address
-                    </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
+                    </p>
+                    <p className="txt-medium text-base-content">
                       {cart.shipping_address.first_name}{" "}
                       {cart.shipping_address.last_name}
-                    </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
+                    </p>
+                    <p className="txt-medium text-base-content">
                       {cart.shipping_address.address_1}{" "}
                       {cart.shipping_address.address_2}
-                    </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
+                    </p>
+                    <p className="txt-medium text-base-content">
                       {cart.shipping_address.postal_code},{" "}
                       {cart.shipping_address.city}
-                    </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
+                    </p>
+                    <p className="txt-medium text-base-content">
                       {cart.shipping_address.country_code?.toUpperCase()}
-                    </Text>
+                    </p>
                   </div>
 
                   <div className="flex flex-col w-1/3 ">
-                    <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Contact
-                    </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
+                    <p className="txt-medium-plus text-primary mb-1">Contact</p>
+                    <p className="txt-medium text-base-content">
                       {cart.shipping_address.phone}
-                    </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
-                      {cart.email}
-                    </Text>
+                    </p>
+                    <p className="txt-medium text-base-content">{cart.email}</p>
                   </div>
 
                   <div className="flex flex-col w-1/3">
-                    <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                    <p className="txt-medium-plus text-primary mb-1">
                       Billing Address
-                    </Text>
+                    </p>
 
                     {checked ? (
-                      <Text className="txt-medium text-ui-fg-subtle">
+                      <p className="txt-medium text-base-content">
                         Billing- and delivery address are the same.
-                      </Text>
+                      </p>
                     ) : (
                       <>
-                        <Text className="txt-medium text-ui-fg-subtle">
+                        <p className="txt-medium text-base-content">
                           {cart.billing_address.first_name}{" "}
                           {cart.billing_address.last_name}
-                        </Text>
-                        <Text className="txt-medium text-ui-fg-subtle">
+                        </p>
+                        <p className="txt-medium text-base-content">
                           {cart.billing_address.address_1}{" "}
                           {cart.billing_address.address_2}
-                        </Text>
-                        <Text className="txt-medium text-ui-fg-subtle">
+                        </p>
+                        <p className="txt-medium text-base-content">
                           {cart.billing_address.postal_code},{" "}
                           {cart.billing_address.city}
-                        </Text>
-                        <Text className="txt-medium text-ui-fg-subtle">
+                        </p>
+                        <p className="txt-medium text-base-content">
                           {cart.billing_address.country_code?.toUpperCase()}
-                        </Text>
+                        </p>
                       </>
                     )}
                   </div>

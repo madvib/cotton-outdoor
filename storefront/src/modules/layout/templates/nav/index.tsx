@@ -9,7 +9,7 @@ import MobileMenu from "@modules/mobile-menu/templates"
 import DesktopSearchModal from "@modules/search/templates/desktop-search-modal"
 import Link from "next/link"
 import ThemeChanger from "@modules/layout/components/theme-changer"
-
+import Logo from "@modules/common/components/logo"
 const Nav = () => {
   const { toggle } = useMobileMenu()
   const {
@@ -21,7 +21,7 @@ const Nav = () => {
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
       <header className="relative h-20 px-8 mx-auto border-b duration-200 bg-base-100">
-        <nav className="flex items-center justify-between w-full h-full text-small-regular">
+        <nav className="flex items-center justify-between w-full h-full text-sm font-normal">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="block small:hidden">
               <Hamburger setOpen={toggle} />
@@ -32,12 +32,7 @@ const Nav = () => {
           </div>
 
           <div className="flex items-center h-full">
-            <Link
-              href="/"
-              className="font-logo text-2xl sm:text-4xl text-center text-primary uppercase"
-            >
-              Open Outdoors
-            </Link>
+            <Logo />
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">

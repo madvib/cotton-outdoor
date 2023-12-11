@@ -112,7 +112,7 @@ const CardNumber = ({
 
   return (
     <div className="py-2 relative">
-      <span className="flex items-center gap-x-1 absolute -top-6 txt-medium text-ui-fg-base">
+      <span className="flex items-center gap-x-1 absolute -top-6 txt-medium text-base-content">
         Card number
         {state.cardNumberComplete && <CheckCircleMiniSolid />}
       </span>
@@ -122,7 +122,7 @@ const CardNumber = ({
         name="cardNumber"
         render={({ message }) => {
           return (
-            <div className="pt-2 text-rose-500 txt-compact-small">
+            <div className="pt-2 text-error txt-compact-small">
               <span>{message}</span>
             </div>
           )
@@ -167,7 +167,7 @@ const CardExpiry = ({
 
   return (
     <div className="w-full py-2 relative">
-      <span className="flex items-center gap-x-1 absolute -top-6 txt-medium text-ui-fg-base">
+      <span className="flex items-center gap-x-1 absolute -top-6 txt-medium text-base-content">
         Expiration date
         {state.cardExpiryComplete && <CheckCircleMiniSolid />}
       </span>
@@ -177,7 +177,7 @@ const CardExpiry = ({
         name="cardExpiry"
         render={({ message }) => {
           return (
-            <div className="pt-2 text-rose-500 txt-compact-small">
+            <div className="pt-2 text-error txt-compact-small">
               <span>{message}</span>
             </div>
           )
@@ -222,7 +222,7 @@ const CardCVC = ({
 
   return (
     <div className="w-full py-2 relative">
-      <span className="flex items-center gap-x-1 absolute -top-6 txt-medium text-ui-fg-base">
+      <span className="flex items-center gap-x-1 absolute -top-6 txt-medium text-base-content">
         CVC
         {state.cardCvcComplete && <CheckCircleMiniSolid />}
       </span>
@@ -235,7 +235,7 @@ const CardCVC = ({
         name="cardCvc"
         render={({ message }) => {
           return (
-            <div className="pt-2 text-rose-500 txt-compact-small">
+            <div className="pt-2 text-error txt-compact-small">
               <span>{message}</span>
             </div>
           )

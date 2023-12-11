@@ -1,6 +1,5 @@
 import { useCheckout } from "@lib/context/checkout-context"
 import PaymentContainer from "../payment-container"
-import { Button, Container, Heading, Text, Tooltip, clx } from "@medusajs/ui"
 import { RadioGroup } from "@headlessui/react"
 import PaymentStripe from "../payment-stripe"
 import Divider from "@modules/common/components/divider"
@@ -13,6 +12,7 @@ import Ideal from "@modules/common/icons/ideal"
 import Bancontact from "@modules/common/icons/bancontact"
 import { useElements } from "@stripe/react-stripe-js"
 import { useState } from "react"
+import clsx from "clsx"
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
@@ -119,11 +119,10 @@ const Payment = () => {
   }
 
   return (
-    <div className="bg-white px-4 small:px-8">
+    <div className="bg-base-100 px-4 small:px-8">
       <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className={clx(
+        <h2
+          className={clsx(
             "flex flex-row text-3xl-regular gap-x-2 items-baseline",
             {
               "opacity-50 pointer-events-none select-none":
@@ -133,13 +132,11 @@ const Payment = () => {
         >
           Payment
           {!isOpen && paymentReady && <CheckCircleSolid />}
-        </Heading>
+        </h2>
         {!isOpen && addressReady && shippingReady && (
-          <Text>
-            <button onClick={handleEdit} className="text-ui-fg-interactive">
-              Edit
-            </button>
-          </Text>
+          <button onClick={handleEdit} className="text-accent text-sm">
+            Edit
+          </button>
         )}
       </div>
       <div>
@@ -171,7 +168,7 @@ const Payment = () => {
               name="paymentSession"
               render={({ message }) => {
                 return (
-                  <div className="pt-2 text-rose-500 text-small-regular">
+                  <div className="pt-2 text-error text-small-regular">
                     <span>{message}</span>
                   </div>
                 )
@@ -186,20 +183,23 @@ const Payment = () => {
                 />
               </div>
             )}
-            <Button
+
+            <button
+              className="btn mt-6"
               onClick={handleSubmit}
               type="submit"
-              size="large"
-              className="mt-6"
               disabled={
                 !cart.payment_session?.provider_id ||
                 (cart.payment_session?.provider_id === "stripe" &&
                   !cardFormComplete)
               }
-              isLoading={settingPaymentSession}
             >
-              Continue to review
-            </Button>
+              {settingPaymentSession ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Continue to review"
+              )}
+            </button>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center px-4 py-16 text-neutral-content">
@@ -211,36 +211,39 @@ const Payment = () => {
           {cart && cart.payment_session && (
             <div className="flex items-start gap-x-1 w-full">
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                <p className="txt-medium-plus text-ui-fg-base mb-1">
                   Payment method
-                </Text>
-                <Text className="txt-medium text-ui-fg-subtle">
+                </p>
+                <p className="txt-medium text-base-content">
                   {paymentInfoMap[cart.payment_session.provider_id]?.title ||
                     cart.payment_session.provider_id}
-                </Text>
+                </p>
                 {process.env.NODE_ENV === "development" &&
                   !Object.hasOwn(
                     paymentInfoMap,
                     cart.payment_session.provider_id
                   ) && (
-                    <Tooltip content="You can add a user-friendly name and icon for this payment provider in 'src/modules/checkout/components/payment/index.tsx'" />
+                    <div
+                      className="tooltip"
+                      data-tip="You can add a user-friendly name and icon for this payment provider in 'src/modules/checkout/components/payment/index.tsx'"
+                    />
                   )}
               </div>
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                <p className="txt-medium-plus text-primary mb-1">
                   Payment details
-                </Text>
-                <div className="flex gap-2 txt-medium text-ui-fg-subtle items-center">
-                  <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
+                </p>
+                <div className="flex gap-2 txt-medium text-base-content items-center">
+                  <div className="flex items-center h-7 w-fit p-2 bg-base-200">
                     {paymentInfoMap[cart.payment_session.provider_id]?.icon || (
                       <CreditCard />
                     )}
-                  </Container>
-                  <Text>
+                  </div>
+                  <p>
                     {cart.payment_session.provider_id === "stripe"
                       ? "**** **** **** ****"
                       : "Another step will appear"}
-                  </Text>
+                  </p>
                 </div>
               </div>
             </div>

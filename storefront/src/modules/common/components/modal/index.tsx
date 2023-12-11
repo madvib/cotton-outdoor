@@ -59,7 +59,7 @@ const Modal: React.FC<ModalProps> & {
                     "max-w-xl": size === "medium",
                     "max-w-3xl": size === "large",
                     "bg-transparent shadow-none": search,
-                    "bg-white shadow-xl border rounded-rounded": !search,
+                    "bg-base-100 shadow-xl border rounded-rounded": !search,
                   }
                 )}
               >

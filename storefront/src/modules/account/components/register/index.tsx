@@ -45,7 +45,7 @@ const Register = () => {
   return (
     <div className="max-w-sm flex flex-col items-center mt-12">
       {isSubmitting && (
-        <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+        <div className="z-10 fixed inset-0 bg-base-100 bg-opacity-50 flex items-center justify-center">
           <Spinner />
         </div>
       )}
@@ -94,7 +94,7 @@ const Register = () => {
         </div>
         {authError && (
           <div>
-            <span className="text-rose-500 w-full text-small-regular">
+            <span className="text-error w-full text-small-regular">
               These credentials do not match our records
             </span>
           </div>
