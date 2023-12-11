@@ -90,7 +90,7 @@ const DropdownMenu = () => {
                           repeat(6).map((index) => (
                             <div
                               key={index}
-                              className="w-12 h-4 bg-gray-100 animate-pulse"
+                              className="w-12 h-4 bg-base-200 animate-pulse"
                             />
                           ))}
                       </div>

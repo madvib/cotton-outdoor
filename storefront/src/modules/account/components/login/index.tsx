@@ -1,6 +1,5 @@
 import { medusaClient } from "@lib/config"
 import { LOGIN_VIEW, useAccount } from "@lib/context/account-context"
-import { Button } from "@medusajs/ui"
 import Input from "@modules/common/components/input"
 import { Spinner } from "@medusajs/icons"
 import { useRouter } from "next/navigation"

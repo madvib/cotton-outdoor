@@ -1,5 +1,4 @@
 import { Cart } from "@medusajs/medusa"
-import { Button } from "@medusajs/ui"
 import Input from "@modules/common/components/input"
 import Trash from "@modules/common/icons/trash"
 import { useCart } from "medusa-react"

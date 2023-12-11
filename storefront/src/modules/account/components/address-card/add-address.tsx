@@ -6,7 +6,6 @@ import { Button, Heading } from "@medusajs/ui"
 import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
 import { Plus } from "@medusajs/icons"
-import { Spinner } from "@medusajs/icons"
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 
