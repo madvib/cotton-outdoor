@@ -211,7 +211,7 @@ const Payment = () => {
           {cart && cart.payment_session && (
             <div className="flex items-start gap-x-1 w-full">
               <div className="flex flex-col w-1/3">
-                <p className="txt-medium-plus text-ui-fg-base mb-1">
+                <p className="txt-medium-plus text-primary mb-1">
                   Payment method
                 </p>
                 <p className="txt-medium text-base-content">

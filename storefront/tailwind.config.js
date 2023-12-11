@@ -15,6 +15,7 @@ module.exports = {
         },
         light: {
           ...require("daisyui/src/theming/themes")["acid"],
+          accent: require("daisyui/src/theming/themes")["dim"]["accent"],
         },
       },
     ],

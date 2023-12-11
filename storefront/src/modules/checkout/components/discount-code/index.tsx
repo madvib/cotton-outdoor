@@ -1,7 +1,6 @@
 import React, { useMemo } from "react"
 import { medusaClient } from "@lib/config"
 import { Cart } from "@medusajs/medusa"
-import { Button, Label, Tooltip, Text, Heading } from "@medusajs/ui"
 import { InformationCircleSolid } from "@medusajs/icons"
 import Input from "@modules/common/components/input"
 import Trash from "@modules/common/icons/trash"
@@ -126,19 +125,19 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
       <div className="txt-medium">
         {gift_cards.length > 0 && (
           <div className="flex flex-col mb-4">
-            <Heading className="txt-medium">Gift card(s) applied:</Heading>
+            <h3 className="txt-medium">Gift card(s) applied:</h3>
             {gift_cards?.map((gc) => (
               <div
                 className="flex items-center justify-between txt-small-plus"
                 key={gc.id}
               >
-                <Text className="flex gap-x-1 items-baseline">
+                <p className="flex gap-x-1 items-baseline">
                   <span>Code: </span>
                   <span className="truncate">{gc.code}</span>
-                </Text>
-                <Text className="font-semibold">
+                </p>
+                <p className="font-semibold">
                   {formatAmount({ region: region, amount: gc.balance })}
-                </Text>
+                </p>
                 <button
                   className="flex items-center gap-x-2 !background-transparent !border-none"
                   onClick={() => removeGiftCard(gc.code)}
@@ -155,13 +154,13 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
         {appliedDiscount ? (
           <div className="w-full flex items-center">
             <div className="flex flex-col w-full">
-              <Heading className="txt-medium">Discount applied:</Heading>
+              <h3 className="txt-medium">Discount applied:</h3>
               <div className="flex items-center justify-between w-full max-w-full">
-                <Text className="flex gap-x-1 items-baseline txt-small-plus w-4/5 pr-1">
+                <p className="flex gap-x-1 items-baseline txt-small-plus w-4/5 pr-1">
                   <span>Code:</span>
                   <span className="truncate">{discounts[0].code}</span>
                   <span className="min-w-fit">({appliedDiscount})</span>
-                </Text>
+                </p>
                 <button
                   className="flex items-center"
                   onClick={onRemove}
@@ -177,12 +176,15 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
           </div>
         ) : (
           <form onSubmit={handleSubmit(onApply)} className="w-full">
-            <Label className="flex gap-x-1 mb-2">
+            <label className="flex gap-x-1 mb-2">
               Gift card or discount code?
-              <Tooltip content="You can add multiple gift cards, but only one discount code.">
-                <InformationCircleSolid color="var(--fg-muted)" />
-              </Tooltip>
-            </Label>
+              <div
+                className="tooltip"
+                data-tip="You can add multiple gift cards, but only one discount code."
+              >
+                <InformationCircleSolid color="oklch(var(--bc))" />
+              </div>
+            </label>
             <div className="flex w-full gap-x-2 items-center">
               <Input
                 label="Please enter code"
@@ -192,14 +194,13 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                 errors={errors}
               />
 
-              <Button
-                type="submit"
-                variant="secondary"
-                className="!min-h-[0] h-10"
-                isLoading={isLoading}
-              >
-                Apply
-              </Button>
+              <button className="btn btn-accent !min-h-[0] h-10" type="submit">
+                {isLoading ? (
+                  <span className="loading loading-spinner"></span>
+                ) : (
+                  "Apply"
+                )}
+              </button>
             </div>
           </form>
         )}

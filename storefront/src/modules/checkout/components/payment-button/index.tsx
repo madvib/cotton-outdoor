@@ -35,7 +35,11 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
         <PayPalPaymentButton notReady={notReady} session={paymentSession} />
       )
     default:
-      return <Button disabled>Select a payment method</Button>
+      return (
+        <button className="btn" disabled>
+          Select a payment method
+        </button>
+      )
   }
 }
 
@@ -121,18 +125,19 @@ const StripePaymentButton = ({
 
   return (
     <>
-      <Button
+      <button
+        className="btn"
         disabled={disabled || notReady}
         onClick={handlePayment}
-        size="large"
-        isLoading={submitting}
       >
-        Place order
-      </Button>
+        {submitting ? (
+          <span className="loading loading-spinner"></span>
+        ) : (
+          "Place order"
+        )}
+      </button>
       {errorMessage && (
-        <div className="text-red-500 text-sm font-normal mt-2">
-          {errorMessage}
-        </div>
+        <div className="text-error text-small-regular mt-2">{errorMessage}</div>
       )}
     </>
   )
@@ -208,14 +213,14 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
   }
 
   return (
-    <Button
-      disabled={notReady}
-      isLoading={submitting}
-      onClick={handlePayment}
-      size="large"
-    >
-      Place order
-    </Button>
+    <button className="btn" disabled={notReady} onClick={handlePayment}>
+      {" "}
+      {submitting ? (
+        <span className="loading loading-spinner"></span>
+      ) : (
+        "Place order"
+      )}
+    </button>
   )
 }
 

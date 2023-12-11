@@ -1,5 +1,4 @@
 import { Cart, Order } from "@medusajs/medusa"
-import { Tooltip } from "@medusajs/ui"
 import { InformationCircleSolid } from "@medusajs/icons"
 import { formatAmount } from "medusa-react"
 import React from "react"
@@ -32,9 +31,12 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
         <div className="flex items-center justify-between">
           <span className="flex gap-x-1 items-center">
             Subtotal
-            <Tooltip content="Cart total excluding shipping and taxes.">
-              <InformationCircleSolid color="var(--fg-muted)" />
-            </Tooltip>
+            <div
+              className="tooltip"
+              data-tip="Cart total excluding shipping and taxes."
+            >
+              <InformationCircleSolid color="oklch(var(--bc))" />
+            </div>
           </span>
           <span>{getAmount(subtotal)}</span>
         </div>
@@ -64,7 +66,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
         </div>
       </div>
       <div className="h-px w-full border-b border-neutral my-4" />
-      <div className="flex items-center justify-between text-ui-fg-base mb-2 text-base">
+      <div className="flex items-center justify-between text-accent mb-2 text-base">
         <span>Total</span>
         <span className="txt-xlarge-plus">{getAmount(total)}</span>
       </div>

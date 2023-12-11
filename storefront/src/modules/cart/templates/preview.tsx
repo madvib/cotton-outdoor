@@ -1,8 +1,7 @@
 import { LineItem, Region } from "@medusajs/medusa"
-import { Table, clx } from "@medusajs/ui"
 import Item from "@modules/cart/components/item"
 import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
-
+import clsx from "clsx"
 type ItemsTemplateProps = {
   items?: Omit<LineItem, "beforeInsert">[]
   region?: Region
@@ -13,13 +12,13 @@ const ItemsPreviewTemplate = ({ items, region }: ItemsTemplateProps) => {
 
   return (
     <div
-      className={clx({
+      className={clsx({
         "pl-[1px] overflow-y-scroll overflow-x-hidden no-scrollbar max-h-[420px]":
           hasOverflow,
       })}
     >
-      <Table>
-        <Table.Body>
+      <table className="table">
+        <tbody>
           {items && region
             ? items
                 .sort((a, b) => {
@@ -38,8 +37,8 @@ const ItemsPreviewTemplate = ({ items, region }: ItemsTemplateProps) => {
             : Array.from(Array(5).keys()).map((i) => {
                 return <SkeletonLineItem key={i} />
               })}
-        </Table.Body>
-      </Table>
+        </tbody>
+      </table>
     </div>
   )
 }

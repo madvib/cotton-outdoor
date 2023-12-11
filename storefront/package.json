@@ -2,7 +2,7 @@
   "name": "medusa-next",
   "version": "1.0.3",
   "private": true,
-  "author": "Kasper Fabricius Kristensen <kasper@medusajs.com> (https://www.medusajs.com)",
+  "author": "Micah Cotton",
   "description": "Next.js starter to be used with Medusa server",
   "keywords": [
     "medusa-storefront"
@@ -62,7 +62,7 @@
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "cypress": "^9.5.2",
-    "daisyui": "4.4.17",
+    "daisyui": "4.4.19",
     "eslint": "8.10.0",
     "eslint-config-next": "^13.4.5",
     "postcss": "^8.4.8",
