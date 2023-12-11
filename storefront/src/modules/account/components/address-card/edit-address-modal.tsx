@@ -148,7 +148,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
 
       <Modal isOpen={state} close={close}>
         <Modal.Title>
-          <Heading className="mb-2">Edit address</Heading>
+          <h2 className="mb-2">Edit address</h2>
         </Modal.Title>
         <Modal.Body>
           <div className="grid grid-cols-1 gap-y-2">
@@ -231,12 +231,20 @@ const EditAddress: React.FC<EditAddressProps> = ({
         </Modal.Body>
         <Modal.Footer>
           <div className="flex gap-3 mt-4">
-            <Button variant="secondary" onClick={close} disabled={submitting}>
+            <button
+              className="btn btn-secondary"
+              onClick={close}
+              disabled={submitting}
+            >
               Cancel
-            </Button>
-            <Button className="min-h-0" onClick={submit} isLoading={submitting}>
-              Save
-            </Button>
+            </button>
+            <button className="min-h-0" onClick={submit}>
+              {submitting ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Save"
+              )}
+            </button>
           </div>
         </Modal.Footer>
       </Modal>

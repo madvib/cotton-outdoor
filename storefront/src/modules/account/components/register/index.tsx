@@ -110,15 +110,13 @@ const Register = () => {
           </Link>
           .
         </span>
-        <Button className="mt-6 w-full" size="xlarge">
-          Join
-        </Button>
+        <button className="btn btn-lg mt-6 w-full">Join</button>
       </form>
       <span className="text-center text-base-content text-small-regular mt-6">
         Already a member?{" "}
         <button
+          className="btn underline"
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          className="underline"
         >
           Sign in
         </button>

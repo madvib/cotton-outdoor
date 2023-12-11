@@ -3,7 +3,6 @@ import useToggleState from "@lib/hooks/use-toggle-state"
 import { emailRegex } from "@lib/util/regex"
 import { Customer } from "@medusajs/medusa"
 import EditButton from "@modules/account/components/edit-button"
-import { Button } from "@medusajs/ui"
 import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
 import Spinner from "@modules/common/icons/spinner"
@@ -88,16 +87,17 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
           )}
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            className="!bg-gray-200 !text-neutral-content !border-gray-200 min-h-0"
-            onClick={close}
-          >
+          <button className="btn !text-neutral-content min-h-0" onClick={close}>
             Cancel
-          </Button>
-          <Button className="min-h-0" onClick={submit} disabled={submitting}>
+          </button>
+          <button
+            className="btn min-h-0"
+            onClick={submit}
+            disabled={submitting}
+          >
             Save
             {submitting && <Spinner />}
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </div>

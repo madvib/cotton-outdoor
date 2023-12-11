@@ -5,18 +5,16 @@ const SignInPrompt = () => {
   return (
     <div className="bg-base-100 flex items-center justify-between">
       <div>
-        <Heading level="h2" className="txt-xlarge">
+        <h2 className="txt-xlarge text-base-content">
           Already have an account?
-        </Heading>
-        <Text className="txt-medium text-ui-fg-subtle mt-2">
+        </h2>
+        <p className="txt-medium text-base-content text-opacity-60">
           Sign in for a better experience.
-        </Text>
+        </p>
       </div>
       <div>
         <Link href="/account/login">
-          <Button variant="secondary" className="h-10">
-            Sign in
-          </Button>
+          <button className="btn btn-secondary h-10">Sign in</button>
         </Link>
       </div>
     </div>

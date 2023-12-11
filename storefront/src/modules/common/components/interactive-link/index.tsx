@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { ArrowUpRightMini } from "@medusajs/icons"
-import { Text } from "@medusajs/ui"
 
 type InteractiveLinkProps = {
   href: string
@@ -21,10 +20,10 @@ const InteractiveLink = ({
       onClick={onClick}
       {...props}
     >
-      <Text className="text-ui-fg-interactive">{children}</Text>
+      <p className="text-accent">{children}</p>
       <ArrowUpRightMini
         className="group-hover:rotate-45 ease-in-out duration-150"
-        color="var(--fg-interactive)"
+        color="oklch(var(--a))"
       />
     </Link>
   )

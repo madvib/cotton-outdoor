@@ -117,16 +117,17 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
           )}
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            className="!bg-gray-200 !text-neutral-content !border-gray-200 min-h-0"
-            onClick={close}
-          >
+          <button className="btn !text-neutral-content min-h-0" onClick={close}>
             Cancel
-          </Button>
-          <Button className="min-h-0" onClick={submit} disabled={submitting}>
+          </button>
+          <button
+            className="btn min-h-0"
+            onClick={submit}
+            disabled={submitting}
+          >
             Save
             {submitting && <Spinner />}
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </div>

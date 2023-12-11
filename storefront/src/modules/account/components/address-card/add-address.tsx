@@ -178,16 +178,20 @@ const AddAddress: React.FC = () => {
         </Modal.Body>
         <Modal.Footer>
           <div className="flex gap-3 mt-4">
-            <Button
-              variant="secondary"
+            <button
+              className="btn btn-secondary"
               onClick={handleClose}
               disabled={submitting}
             >
               Cancel
-            </Button>
-            <Button className="min-h-0" onClick={submit} isLoading={submitting}>
-              Save
-            </Button>
+            </button>
+            <button className="btn min-h-0" onClick={submit}>
+              {submitting ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Save"
+              )}
+            </button>
           </div>
         </Modal.Footer>
       </Modal>

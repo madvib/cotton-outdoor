@@ -53,14 +53,13 @@ const AccountInfo = ({
           </div>
         </div>
         <div>
-          <Button
-            variant="secondary"
-            className="w-[100px] min-h-[25px] py-1"
+          <button
+            className="btn btn-secondary w-[100px] min-h-[25px] py-1"
             onClick={handleToggle}
             type={state ? "reset" : "button"}
           >
             {state ? "Cancel" : "Edit"}
-          </Button>
+          </button>
         </div>
       </div>
 
@@ -114,13 +113,13 @@ const AccountInfo = ({
           <div className="flex flex-col gap-y-2 py-4">
             <div>{children}</div>
             <div className="flex items-center justify-end mt-2">
-              <Button
-                isLoading={isLoading}
-                className="w-full small:max-w-[140px]"
-                type="submit"
-              >
-                Save changes
-              </Button>
+              <button className="btn w-full small:max-w-[140px]" type="submit">
+                {isLoading ? (
+                  <span className="loading loading-spinner"></span>
+                ) : (
+                  "Save changes"
+                )}
+              </button>
             </div>
           </div>
         </Disclosure.Panel>

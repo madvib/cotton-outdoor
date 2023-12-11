@@ -49,7 +49,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
       </div>
 
       {selectedPrice ? (
-        <div className="flex flex-col text-ui-fg-base">
+        <div className="flex flex-col text-base-content">
           <span
             className={clsx("text-xl-semi", {
               "text-ui-fg-interactive": selectedPrice.price_type === "sale",
@@ -60,7 +60,9 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           {selectedPrice.price_type === "sale" && (
             <>
               <p>
-                <span className="text-ui-fg-subtle">Original: </span>
+                <span className="text-base-content text-opacity-60">
+                  Original:{" "}
+                </span>
                 <span className="line-through">
                   {selectedPrice.original_price}
                 </span>
@@ -75,18 +77,17 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         <div></div>
       )}
 
-      <Button
+      <button
+        className="btn w-full h-10"
         onClick={addToCart}
         disabled={!inStock || !variant}
-        variant="primary"
-        className="w-full h-10"
       >
         {!inStock
           ? "Out of stock"
           : !variant
           ? "Select variant"
           : "Add to cart"}
-      </Button>
+      </button>
     </div>
   )
 }

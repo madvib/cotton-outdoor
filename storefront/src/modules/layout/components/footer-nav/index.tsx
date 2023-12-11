@@ -5,6 +5,7 @@ import { useCollections, useProductCategories } from "medusa-react"
 import { Text } from "@medusajs/ui"
 import Link from "next/link"
 import MedusaCTA from "../medusa-cta"
+import Logo from "@modules/common/components/logo"
 
 const FooterNav = () => {
   const { collections } = useCollections()
@@ -15,12 +16,7 @@ const FooterNav = () => {
       <div className="content-container flex flex-col">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
           <div>
-            <Link
-              href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
-            >
-              Open Outdoors
-            </Link>
+            <Logo />
           </div>
           <div className="text-small-regular grid grid-cols-3 gap-x-10 md:gap-x-16">
             {product_categories && (
@@ -43,12 +39,12 @@ const FooterNav = () => {
 
                     return (
                       <li
-                        className="flex flex-col gap-2 text-ui-fg-subtle txt-small"
+                        className="flex flex-col gap-2 text-base-content text-opacity-60 txt-small"
                         key={c.id}
                       >
                         <Link
                           className={clsx(
-                            "hover:text-ui-fg-base",
+                            "hover:text-base-content",
                             children && "txt-small-plus"
                           )}
                           href={`/${c.handle}`}
@@ -61,7 +57,7 @@ const FooterNav = () => {
                               children.map((child) => (
                                 <li key={child.id}>
                                   <Link
-                                    className="hover:text-ui-fg-base"
+                                    className="hover:text-base-content"
                                     href={`/${child.handle}`}
                                   >
                                     {child.name}
@@ -83,7 +79,7 @@ const FooterNav = () => {
                 </span>
                 <ul
                   className={clsx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
+                    "grid grid-cols-1 gap-2 text-base-content text-opacity-60 txt-small",
                     {
                       "grid-cols-2": (collections?.length || 0) > 3,
                     }
@@ -92,7 +88,7 @@ const FooterNav = () => {
                   {collections?.slice(0, 6).map((c) => (
                     <li key={c.id}>
                       <Link
-                        className="hover:text-ui-fg-base"
+                        className="hover:text-base-content"
                         href={`/collections/${c.handle}`}
                       >
                         {c.title}

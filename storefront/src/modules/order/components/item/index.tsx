@@ -24,7 +24,7 @@ const Item = ({ item, region }: ItemProps) => {
       </Table.Cell>
 
       <Table.Cell className="text-left">
-        <Text className="txt-medium-plus text-ui-fg-base">{item.title}</Text>
+        <Text className="txt-medium-plus text-base-content">{item.title}</Text>
         <LineItemOptions variant={item.variant} />
       </Table.Cell>
 

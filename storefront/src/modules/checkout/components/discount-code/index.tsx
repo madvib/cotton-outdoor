@@ -139,7 +139,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                   {formatAmount({ region: region, amount: gc.balance })}
                 </p>
                 <button
-                  className="flex items-center gap-x-2 !background-transparent !border-none"
+                  className="btn flex items-center gap-x-2 !background-transparent !border-none"
                   onClick={() => removeGiftCard(gc.code)}
                   disabled={isLoading}
                 >
@@ -162,7 +162,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                   <span className="min-w-fit">({appliedDiscount})</span>
                 </p>
                 <button
-                  className="flex items-center"
+                  className="btn flex items-center"
                   onClick={onRemove}
                   disabled={isLoading}
                 >

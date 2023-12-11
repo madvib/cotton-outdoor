@@ -30,12 +30,12 @@ const Hit = ({ hit }: HitProps) => {
           {hit.collection_id && (
             <Link
               href={`/collections/${hit.collection_handle}`}
-              className="text-ui-fg-on-color hover:text-ui-fg-subtle"
+              className="text-ui-fg-on-color hover:text-base-content text-opacity-60"
             >
               {hit.collection_handle}
             </Link>
           )}
-          <Text className="text-ui-fg-subtle">{hit.title}</Text>
+          <Text className="text-base-content text-opacity-60">{hit.title}</Text>
         </div>
       </div>
     </Container>

@@ -1,5 +1,4 @@
 import { LineItem, Region } from "@medusajs/medusa"
-import { Heading, Table } from "@medusajs/ui"
 import Item from "@modules/cart/components/item"
 import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
 
@@ -12,23 +11,19 @@ const ItemsTemplate = ({ items, region }: ItemsTemplateProps) => {
   return (
     <div>
       <div className="pb-3 flex items-center">
-        <Heading className="text-[2rem] leading-[2.75rem]">Cart</Heading>
+        <h3 className="text-[2rem] leading-[2.75rem]">Cart</h3>
       </div>
-      <Table>
-        <Table.Header className="border-t-0">
-          <Table.Row className="text-ui-fg-subtle txt-medium-plus">
-            <Table.HeaderCell className="!pl-0">Item</Table.HeaderCell>
-            <Table.HeaderCell></Table.HeaderCell>
-            <Table.HeaderCell>Quantity</Table.HeaderCell>
-            <Table.HeaderCell className="hidden small:table-cell">
-              Price
-            </Table.HeaderCell>
-            <Table.HeaderCell className="!pr-0 text-right">
-              Total
-            </Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
+      <table className="table">
+        <thead className="border-t-0">
+          <tr className="text-base-content text-opacity-60 txt-medium-plus">
+            <th className="!pl-0">Item</th>
+            <th></th>
+            <th>Quantity</th>
+            <th className="hidden small:table-cell">Price</th>
+            <th className="!pr-0 text-right">Total</th>
+          </tr>
+        </thead>
+        <tbody>
           {items && region
             ? items
                 .sort((a, b) => {
@@ -40,8 +35,8 @@ const ItemsTemplate = ({ items, region }: ItemsTemplateProps) => {
             : Array.from(Array(5).keys()).map((i) => {
                 return <SkeletonLineItem key={i} />
               })}
-        </Table.Body>
-      </Table>
+        </tbody>
+      </table>
     </div>
   )
 }

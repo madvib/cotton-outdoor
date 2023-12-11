@@ -13,7 +13,7 @@ const Radio = ({ checked }: { checked: boolean }) => {
               data-state={checked ? "checked" : "unchecked"}
               className="group flex items-center justify-center"
             >
-              <div className="bg-base-100  rounded-full group-disabled:shadow-none h-1.5 w-1.5"></div>
+              <div className="bg-base-100 rounded-full group-disabled:shadow-none h-1.5 w-1.5"></div>
             </span>
           )}
         </div>

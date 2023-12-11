@@ -20,7 +20,7 @@ const Hero = () => {
           </Heading>
         </span>
 
-        <Button variant="secondary">click me</Button>
+        <button className="btn btn-secondary">click me</button>
       </div>
     </div>
   )

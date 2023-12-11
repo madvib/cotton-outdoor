@@ -135,7 +135,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                               </span>
                             </div>
                             <button
-                              className="flex items-center justify-between"
+                              className="btn flex items-center justify-between"
                               onClick={close}
                             >
                               <span className="sr-only">

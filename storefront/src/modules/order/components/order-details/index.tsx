@@ -36,13 +36,13 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
           <>
             <Text>
               Order status:{" "}
-              <span className="text-ui-fg-subtle ">
+              <span className="text-base-content text-opacity-60 ">
                 {formatStatus(order.fulfillment_status)}
               </span>
             </Text>
             <Text>
               Payment status:{" "}
-              <span className="text-ui-fg-subtle ">
+              <span className="text-base-content text-opacity-60 ">
                 {formatStatus(order.payment_status)}
               </span>
             </Text>

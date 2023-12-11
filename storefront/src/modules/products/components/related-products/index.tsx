@@ -84,13 +84,13 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
       </ul>
       {hasNextPage && (
         <div className="flex items-center justify-center mt-8">
-          <Button
-            isLoading={isLoading}
-            onClick={() => fetchNextPage()}
-            className="w-72"
-          >
-            Load more
-          </Button>
+          <button onClick={() => fetchNextPage()} className="w-72">
+            {isLoading ? (
+              <span className="loading loading-spinner"></span>
+            ) : (
+              "Load more"
+            )}{" "}
+          </button>
         </div>
       )}
     </div>

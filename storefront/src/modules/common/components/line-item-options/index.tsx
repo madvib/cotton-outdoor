@@ -11,7 +11,10 @@ const LineItemOptions = ({ variant }: LineItemOptionsProps) => {
           variant.product.options.find((opt) => opt.id === option.option_id)
             ?.title || "Option"
         return (
-          <Text key={option.id} className="txt-medium text-ui-fg-subtle">
+          <Text
+            key={option.id}
+            className="txt-medium text-base-content text-opacity-60"
+          >
             {optionName}: {option.value}
           </Text>
         )

@@ -34,7 +34,7 @@ const OrderCompletedTemplate: React.FC<OrderCompletedTemplateProps> = ({
         <div className="flex flex-col gap-4 max-w-4xl h-full bg-base-100 w-full p-10">
           <Heading
             level="h1"
-            className="flex flex-col gap-y-2 text-ui-fg-base text-3xl"
+            className="flex flex-col gap-y-2 text-base-content text-3xl"
           >
             <span>Thank you!</span>
             <span>Your order was placed successfully.</span>

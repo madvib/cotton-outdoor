@@ -72,15 +72,13 @@ const Login = () => {
             </span>
           </div>
         )}
-        <Button className="mt-6 w-full" size="large">
-          Enter
-        </Button>
+        <button className="btn mt-6 w-full">Enter</button>
       </form>
       <span className="text-center text-base-content text-small-regular mt-6">
         Not a member?{" "}
         <button
+          className="btn underline"
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
-          className="underline"
         >
           Join us
         </button>
