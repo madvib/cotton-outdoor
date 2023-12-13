@@ -57,7 +57,7 @@ const AddressSelect = ({ addresses }: AddressSelectProps) => {
   return (
     <Listbox onChange={handleSelect} value={selected}>
       <div className="relative">
-        <Listbox.Button className="relative w-full flex justify-between items-center px-4 py-[10px] text-left bg-base-100 cursor-default focus:outline-none border rounded-rounded focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-gray-300 focus-visible:ring-offset-2 focus-visible:border-gray-300 text-base-regular">
+        <Listbox.Button className="relative w-full flex justify-between items-center px-4 py-[10px] text-left bg-base-100 cursor-default focus:outline-none border rounded-rounded focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-base-300 focus-visible:ring-offset-base-200 focus-visible:ring-offset-2 focus-visible:border-base-300 text-base-regular">
           {({ open }) => (
             <>
               <span className="block truncate">
@@ -85,7 +85,7 @@ const AddressSelect = ({ addresses }: AddressSelectProps) => {
                 <Listbox.Option
                   key={address.id}
                   value={address.id}
-                  className="cursor-default select-none relative pl-6 pr-10 hover:bg-gray-50 py-4"
+                  className="cursor-default select-none relative pl-6 pr-10 hover:bg-base-300 py-4"
                 >
                   <div className="flex gap-x-4 items-start">
                     <Radio checked={selected === address.id} />

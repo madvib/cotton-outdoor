@@ -75,7 +75,7 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
           parents.map((parent) => (
             <span key={parent.id} className="text-base-content">
               <Link
-                className="mr-4 hover:text-black"
+                className="mr-4 hover:text-accent"
                 href={`/${parent.handle}`}
               >
                 {parent.name}

@@ -3,7 +3,7 @@ import repeat from "@lib/util/repeat"
 const SkeletonProductTabs = () => {
   return (
     <div className="flex flex-col animate-pulse w-full">
-      <div className="flex items-center gap-x-6 border-b border-gray-100 pb-2">
+      <div className="flex items-center gap-x-6 border-b border-base-300 pb-2">
         {repeat(2).map((index) => (
           <div
             key={index}

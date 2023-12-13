@@ -52,7 +52,7 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
         <select
           ref={innerRef}
           {...props}
-          className="select appearance-none bg-transparent border-none px-4 transition-colors duration-150 focus:border-gray-700 outline-none w-16 h-16 items-center justify-center"
+          className="select appearance-none bg-transparent border-none px-4 transition-colors duration-150 focus:border-base-300 outline-none w-16 h-16 items-center justify-center"
         >
           <option disabled value="">
             {placeholder}

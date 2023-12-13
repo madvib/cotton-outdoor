@@ -2,7 +2,6 @@
 
 import clsx from "clsx"
 import { useCollections, useProductCategories } from "medusa-react"
-import { Text } from "@medusajs/ui"
 import Link from "next/link"
 import MedusaCTA from "../medusa-cta"
 import Logo from "@modules/common/components/logo"
@@ -12,7 +11,7 @@ const FooterNav = () => {
   const { product_categories } = useProductCategories()
 
   return (
-    <div className="border-t border-ui-border-base w-screen">
+    <div className="border-t border-neutral w-screen">
       <div className="content-container flex flex-col">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
           <div>
@@ -100,10 +99,10 @@ const FooterNav = () => {
             )}
           </div>
         </div>
-        <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
-          <Text className="txt-compact-small">
+        <div className="flex w-full mb-16 justify-between text-base-content text-opacity-60">
+          <pattern className="txt-compact-small">
             © {new Date().getFullYear()} Open Outdoors. All rights reserved.
-          </Text>
+          </pattern>
           <MedusaCTA />
         </div>
       </div>

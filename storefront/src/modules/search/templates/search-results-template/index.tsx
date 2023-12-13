@@ -1,7 +1,6 @@
 "use client"
 
 import { StoreGetProductsParams } from "@medusajs/medusa"
-import { Heading, Text } from "@medusajs/ui"
 import InfiniteProducts from "@modules/products/components/infinite-products"
 import RefinementList from "@modules/store/components/refinement-list"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
@@ -27,10 +26,10 @@ const SearchResultsTemplate = ({ query, hits }: SearchResultsTemplateProps) => {
     <div>
       <div className="flex justify-between border-b w-full py-6 px-8 small:px-14 items-center">
         <div className="flex flex-col items-start">
-          <Text className="text-ui-fg-muted">Search Results for:</Text>
-          <Heading>
+          <p className="text-ui-fg-muted">Search Results for:</p>
+          <h3>
             {query} ({hits.length})
-          </Heading>
+          </h3>
         </div>
         <Link
           href="/store"
@@ -52,7 +51,7 @@ const SearchResultsTemplate = ({ query, hits }: SearchResultsTemplateProps) => {
             <InfiniteProducts params={params} sortBy={sortBy} />
           </>
         ) : (
-          <Text className="ml-8 small:ml-14 mt-3">No results.</Text>
+          <p className="ml-8 small:ml-14 mt-3">No results.</p>
         )}
       </div>
     </div>

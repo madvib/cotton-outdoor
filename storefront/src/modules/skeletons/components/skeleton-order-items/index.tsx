@@ -1,6 +1,6 @@
 const SkeletonOrderItems = () => {
   return (
-    <div className="flex flex-col gap-y-4 py-10 border-y border-gray-200">
+    <div className="flex flex-col gap-y-4 py-10 border-y border-base-300">
       <div className="grid grid-cols-[122px_1fr] gap-x-4">
         <div className="w-full aspect-[29/34] bg-base-200"></div>
         <div className="flex items-start justify-between">

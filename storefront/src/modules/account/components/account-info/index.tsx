@@ -1,6 +1,5 @@
 import { Disclosure } from "@headlessui/react"
 import useToggleState from "@lib/hooks/use-toggle-state"
-import { Badge } from "@medusajs/ui"
 import clsx from "clsx"
 import { useEffect } from "react"
 
@@ -27,7 +26,8 @@ const AccountInfo = ({
 }: AccountInfoProps) => {
   const { state, close, toggle } = useToggleState()
 
-  const handleToggle = () => {
+  const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
     clearState()
     setTimeout(() => toggle(), 100)
   }
@@ -53,9 +53,9 @@ const AccountInfo = ({
         </div>
         <div>
           <button
+            type={state ? "reset" : "button"}
             className="btn btn-secondary w-[100px] min-h-[25px] py-1"
             onClick={handleToggle}
-            type={state ? "reset" : "button"}
           >
             {state ? "Cancel" : "Edit"}
           </button>
@@ -74,9 +74,9 @@ const AccountInfo = ({
             }
           )}
         >
-          <Badge className="p-2 my-4" color="green">
+          <div className="badge badge-success p-2 my-4" color="green">
             <span>{label} updated succesfully</span>
-          </Badge>
+          </div>
         </Disclosure.Panel>
       </Disclosure>
 
@@ -92,9 +92,9 @@ const AccountInfo = ({
             }
           )}
         >
-          <Badge className="p-2 my-4" color="red">
+          <div className="badge badge-error p-2 my-4" color="red">
             <span>{errorMessage}</span>
-          </Badge>
+          </div>
         </Disclosure.Panel>
       </Disclosure>
 
@@ -104,8 +104,8 @@ const AccountInfo = ({
           className={clsx(
             "transition-[max-height,opacity] duration-300 ease-in-out overflow-visible",
             {
-              "max-h-[1000px] opacity-100": state,
-              "max-h-0 opacity-0": !state,
+              "max-h-[1000px] block": state,
+              "max-h-0 hidden": !state,
             }
           )}
         >

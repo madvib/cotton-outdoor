@@ -44,7 +44,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="bg-base-100 flex flex-col gap-y-3 justify-center items-center text-large-regular p-4 h-full w-full border-t border-gray-200">
+          <div className="bg-base-100 flex flex-col gap-y-3 justify-center items-center text-large-regular p-4 h-full w-full border-t border-base-200">
             <div className="flex items-center gap-x-2">
               <span>{product.title}</span>
               <span>—</span>
@@ -59,8 +59,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                   )}
                   <span
                     className={clsx({
-                      "text-ui-fg-interactive":
-                        selectedPrice.price_type === "sale",
+                      "text-accent": selectedPrice.price_type === "sale",
                     })}
                   >
                     {selectedPrice.calculated_price}
@@ -99,7 +98,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-700 bg-opacity-75 backdrop-blur-sm" />
+            <div className="fixed inset-0 bg-base-300 bg-opacity-75 backdrop-blur-sm" />
           </Transition.Child>
 
           <div className="fixed bottom-0 inset-x-0">

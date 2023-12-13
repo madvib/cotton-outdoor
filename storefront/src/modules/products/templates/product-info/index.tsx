@@ -1,5 +1,4 @@
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
-import { Heading, Text } from "@medusajs/ui"
 import Link from "next/link"
 import React from "react"
 
@@ -19,13 +18,13 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             {product.collection.title}
           </Link>
         )}
-        <Heading level="h2" className="text-3xl leading-10 text-base-content">
+        <h2 className="text-3xl leading-10 text-base-content">
           {product.title}
-        </Heading>
+        </h2>
 
-        <Text className="text-medium text-base-content text-opacity-60">
+        <p className="text-medium text-base-content text-opacity-60">
           {product.description}
-        </Text>
+        </p>
       </div>
     </div>
   )

@@ -1,6 +1,5 @@
 import useEnrichedLineItems from "@lib/hooks/use-enrich-line-items"
 import { LineItem, Region } from "@medusajs/medusa"
-import { Table } from "@medusajs/ui"
 import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
 
 import Item from "@modules/order/components/item"
@@ -18,8 +17,8 @@ const Items = ({ items, region, cartId }: ItemsProps) => {
   return (
     <div className="flex flex-col">
       <Divider className="!mb-0" />
-      <Table>
-        <Table.Body>
+      <table className="table">
+        <tbody>
           {enrichedItems?.length && region
             ? items
                 .sort((a, b) => {
@@ -31,8 +30,8 @@ const Items = ({ items, region, cartId }: ItemsProps) => {
             : Array.from(Array(5).keys()).map((i) => {
                 return <SkeletonLineItem key={i} />
               })}
-        </Table.Body>
-      </Table>
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 "use client"
 
-import { Heading, Text } from "@medusajs/ui"
 import { Spinner } from "@medusajs/icons"
 import { useCart } from "medusa-react"
 
@@ -15,14 +14,14 @@ const SubmitSpinner = () => {
         <div className="flex flex-col items-center justify-center gap-y-6">
           <div className="flex items-center gap-x-3">
             <Spinner className="animate-spin" />
-            <Heading className="text-neutral-content text-2xl font-medium">
+            <h3 className="text-neutral-content text-2xl font-medium">
               Please wait...
-            </Heading>
+            </h3>
           </div>
-          <Text>
+          <p>
             Your order is processing. Do not press back or refresh until your
             order is complete.
-          </Text>
+          </p>
         </div>
       </div>
     )

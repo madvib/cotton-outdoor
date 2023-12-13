@@ -2,7 +2,6 @@ import { medusaClient } from "@lib/config"
 import { useAccount } from "@lib/context/account-context"
 import useToggleState from "@lib/hooks/use-toggle-state"
 import CountrySelect from "@modules/checkout/components/country-select"
-import { Button, Heading } from "@medusajs/ui"
 import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
 import { Plus } from "@medusajs/icons"
@@ -85,7 +84,7 @@ const AddAddress: React.FC = () => {
   return (
     <>
       <button
-        className="border border-ui-border-base rounded-rounded p-5 min-h-[220px] h-full w-full flex flex-col justify-between"
+        className="border border-neutral rounded-rounded p-5 min-h-[220px] h-full w-full flex flex-col justify-between"
         onClick={open}
       >
         <span className="text-base-semi">New address</span>
@@ -94,7 +93,7 @@ const AddAddress: React.FC = () => {
 
       <Modal isOpen={state} close={handleClose}>
         <Modal.Title>
-          <Heading className="mb-2">Add address</Heading>
+          <h2 className="mb-2">Add address</h2>
         </Modal.Title>
         <Modal.Body>
           <div className="flex flex-col gap-y-2">

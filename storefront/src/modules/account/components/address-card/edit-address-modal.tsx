@@ -3,11 +3,9 @@ import { useAccount } from "@lib/context/account-context"
 import useToggleState from "@lib/hooks/use-toggle-state"
 import { Address } from "@medusajs/medusa"
 import CountrySelect from "@modules/checkout/components/country-select"
-import { Button, Heading, Text } from "@medusajs/ui"
 import { PencilSquare as Edit, Trash } from "@medusajs/icons"
 import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
-import Spinner from "@modules/common/icons/spinner"
 import clsx from "clsx"
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
@@ -101,20 +99,20 @@ const EditAddress: React.FC<EditAddressProps> = ({
         className={clsx(
           "border rounded-rounded p-5 min-h-[220px] h-full w-full flex flex-col justify-between transition-colors",
           {
-            "border-gray-900": isActive,
+            "border-base-300": isActive,
           }
         )}
       >
         <div className="flex flex-col">
-          <Heading className="text-left text-base-semi">
+          <h2 className="text-left text-base-semi">
             {address.first_name} {address.last_name}
-          </Heading>
+          </h2>
           {address.company && (
-            <Text className="txt-compact-small text-base-content">
+            <p className="txt-compact-small text-base-content">
               {address.company}
-            </Text>
+            </p>
           )}
-          <Text className="flex flex-col text-left text-base-regular mt-2">
+          <p className="flex flex-col text-left text-base-regular mt-2">
             <span>
               {address.address_1}
               {address.address_2 && <span>, {address.address_2}</span>}
@@ -126,7 +124,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
               {address.province && `${address.province}, `}
               {address.country_code?.toUpperCase()}
             </span>
-          </Text>
+          </p>
         </div>
         <div className="flex items-center gap-x-4">
           <button

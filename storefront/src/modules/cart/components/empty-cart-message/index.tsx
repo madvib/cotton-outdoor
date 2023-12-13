@@ -1,4 +1,3 @@
-import { Heading, Text } from "@medusajs/ui"
 import UnderlineLink from "@modules/common/components/interactive-link"
 
 const EmptyCartMessage = () => {

@@ -52,10 +52,10 @@ const Collapsible: React.FC<{ label: string }> = ({ label, children }) => {
 const AnimatedButton = ({ open }: { open: boolean }) => {
   return (
     <div className="w-[15px] h-[15px] relative cursor-pointer">
-      <div className="bg-gray-900 absolute top-[7px] inset-x-0 h-px" />
+      <div className="bg-base-200 absolute top-[7px] inset-x-0 h-px" />
       <div
         className={clsx(
-          "bg-gray-900 absolute left-[7px] inset-y-0 w-px transition-all duration-300 ease-out",
+          "bg-base-300 absolute left-[7px] inset-y-0 w-px transition-all duration-300 ease-out",
           { "rotate-90": open }
         )}
       />

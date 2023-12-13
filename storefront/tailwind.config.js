@@ -1,11 +1,11 @@
 module.exports = {
-  presets: [require("@medusajs/ui-preset")],
+  // presets: [require("@medusajs/ui-preset")],
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/modules/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
+    // "./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
   ],
   daisyui: {
     themes: [
@@ -15,6 +15,8 @@ module.exports = {
         },
         light: {
           ...require("daisyui/src/theming/themes")["acid"],
+          primary: require("daisyui/src/theming/themes")["dim"]["secondary"],
+          secondary: require("daisyui/src/theming/themes")["dim"]["primary"],
           accent: require("daisyui/src/theming/themes")["dim"]["accent"],
         },
       },

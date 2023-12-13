@@ -1,5 +1,4 @@
 import React from "react"
-import { Checkbox, Label } from "@medusajs/ui"
 
 type CheckboxProps = {
   checked?: boolean

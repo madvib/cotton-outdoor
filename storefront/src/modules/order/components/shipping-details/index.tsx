@@ -1,5 +1,4 @@
 import { Order } from "@medusajs/medusa"
-import { Heading, Text } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import { formatAmount } from "medusa-react"
 
@@ -10,45 +9,41 @@ type ShippingDetailsProps = {
 const ShippingDetails = ({ order }: ShippingDetailsProps) => {
   return (
     <div>
-      <Heading level="h2" className="flex flex-row text-3xl-regular my-6">
-        Delivery
-      </Heading>
+      <h2 className="flex flex-row text-3xl-regular my-6">Delivery</h2>
       <div className="flex items-start gap-x-8">
         <div className="flex flex-col w-1/3">
-          <Text className="txt-medium-plus text-base-content mb-1">
+          <p className="txt-medium-plus text-base-content mb-1">
             Shipping Address
-          </Text>
-          <Text className="txt-medium text-base-content text-opacity-60">
+          </p>
+          <p className="txt-medium text-base-content text-opacity-60">
             {order.shipping_address.first_name}{" "}
             {order.shipping_address.last_name}
-          </Text>
-          <Text className="txt-medium text-base-content text-opacity-60">
+          </p>
+          <p className="txt-medium text-base-content text-opacity-60">
             {order.shipping_address.address_1}{" "}
             {order.shipping_address.address_2}
-          </Text>
-          <Text className="txt-medium text-base-content text-opacity-60">
+          </p>
+          <p className="txt-medium text-base-content text-opacity-60">
             {order.shipping_address.postal_code}, {order.shipping_address.city}
-          </Text>
-          <Text className="txt-medium text-base-content text-opacity-60">
+          </p>
+          <p className="txt-medium text-base-content text-opacity-60">
             {order.shipping_address.country_code?.toUpperCase()}
-          </Text>
+          </p>
         </div>
 
         <div className="flex flex-col w-1/3 ">
-          <Text className="txt-medium-plus text-base-content mb-1">
-            Contact
-          </Text>
-          <Text className="txt-medium text-base-content text-opacity-60">
+          <p className="txt-medium-plus text-base-content mb-1">Contact</p>
+          <p className="txt-medium text-base-content text-opacity-60">
             {order.shipping_address.phone}
-          </Text>
-          <Text className="txt-medium text-base-content text-opacity-60">
+          </p>
+          <p className="txt-medium text-base-content text-opacity-60">
             {order.email}
-          </Text>
+          </p>
         </div>
 
         <div className="flex flex-col w-1/3">
-          <Text className="txt-medium-plus text-base-content mb-1">Method</Text>
-          <Text className="txt-medium text-base-content text-opacity-60">
+          <p className="txt-medium-plus text-base-content mb-1">Method</p>
+          <p className="txt-medium text-base-content text-opacity-60">
             {order.shipping_methods[0].shipping_option.name} (
             {formatAmount({
               amount: order.shipping_methods[0].price,
@@ -57,7 +52,7 @@ const ShippingDetails = ({ order }: ShippingDetailsProps) => {
               .replace(/,/g, "")
               .replace(/\./g, ",")}
             )
-          </Text>
+          </p>
         </div>
       </div>
       <Divider className="mt-8" />

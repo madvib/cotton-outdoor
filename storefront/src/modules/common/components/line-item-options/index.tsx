@@ -1,5 +1,4 @@
 import { ProductVariant } from "@medusajs/medusa"
-import { Text } from "@medusajs/ui"
 
 type LineItemOptionsProps = { variant: ProductVariant }
 
@@ -11,12 +10,12 @@ const LineItemOptions = ({ variant }: LineItemOptionsProps) => {
           variant.product.options.find((opt) => opt.id === option.option_id)
             ?.title || "Option"
         return (
-          <Text
+          <p
             key={option.id}
             className="txt-medium text-base-content text-opacity-60"
           >
             {optionName}: {option.value}
-          </Text>
+          </p>
         )
       })}
     </>

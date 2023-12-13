@@ -1,4 +1,3 @@
-import { Button, Heading, Text } from "@medusajs/ui"
 import Link from "next/link"
 
 const SignInPrompt = () => {

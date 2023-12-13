@@ -2,7 +2,6 @@ import clsx from "clsx"
 import Link from "next/link"
 import { ProductPreviewType } from "types/global"
 import Thumbnail from "../thumbnail"
-import { Text } from "@medusajs/ui"
 
 const ProductPreview = ({
   title,
@@ -15,22 +14,22 @@ const ProductPreview = ({
     <div>
       <Thumbnail thumbnail={thumbnail} size="full" isFeatured={isFeatured} />
       <div className="flex txt-compact-medium mt-4 justify-between">
-        <Text className="text-base-content text-opacity-60">{title}</Text>
+        <p className="text-base-content text-opacity-60">{title}</p>
         <div className="flex items-center gap-x-2">
           {price ? (
             <>
               {price.price_type === "sale" && (
-                <Text className="line-through text-ui-fg-muted">
+                <p className="line-through text-ui-fg-muted">
                   {price.original_price}
-                </Text>
+                </p>
               )}
-              <Text
+              <p
                 className={clsx("text-ui-fg-muted", {
-                  "text-ui-fg-interactive": price.price_type === "sale",
+                  "text-accent": price.price_type === "sale",
                 })}
               >
                 {price.calculated_price}
-              </Text>
+              </p>
             </>
           ) : (
             <div className="w-20 h-6 animate-pulse bg-base-200"></div>

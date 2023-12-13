@@ -3,8 +3,6 @@ import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import Back from "@modules/common/icons/back"
 import FastDelivery from "@modules/common/icons/fast-delivery"
 import Refresh from "@modules/common/icons/refresh"
-import { ProgressAccordion, Text } from "@medusajs/ui"
-import clsx from "clsx"
 import { useMemo } from "react"
 import Accordion from "./accordion"
 

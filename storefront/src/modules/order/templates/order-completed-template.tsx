@@ -8,9 +8,7 @@ import OrderSummary from "@modules/order/components/order-summary"
 import ShippingDetails from "@modules/order/components/shipping-details"
 import OnboardingCta from "@modules/order/components/onboarding-cta"
 import React, { useEffect, useState } from "react"
-import Divider from "@modules/common/components/divider"
 import CartTotals from "@modules/common/components/cart-totals"
-import { Heading } from "@medusajs/ui"
 import PaymentDetails from "../components/payment-details"
 
 type OrderCompletedTemplateProps = {
@@ -32,17 +30,12 @@ const OrderCompletedTemplate: React.FC<OrderCompletedTemplateProps> = ({
       <div className="content-container flex flex-col justify-center items-center gap-y-10 max-w-4xl h-full w-full">
         {isOnboarding && <OnboardingCta orderId={order.id} />}
         <div className="flex flex-col gap-4 max-w-4xl h-full bg-base-100 w-full p-10">
-          <Heading
-            level="h1"
-            className="flex flex-col gap-y-2 text-base-content text-3xl"
-          >
+          <h1 className="flex flex-col gap-y-2 text-base-content text-3xl">
             <span>Thank you!</span>
             <span>Your order was placed successfully.</span>
-          </Heading>
+          </h1>
           <OrderDetails order={order} />
-          <Heading level="h2" className="flex flex-row text-3xl-regular">
-            Summary
-          </Heading>
+          <h2 className="flex flex-row text-3xl-regular">Summary</h2>
           <Items
             items={order.items}
             region={order.region}

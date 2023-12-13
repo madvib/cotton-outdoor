@@ -6,7 +6,6 @@ import { MagnifyingGlassMini, XMark as X } from "@medusajs/icons"
 import { useCollections, useMeCustomer } from "medusa-react"
 import Link from "next/link"
 import ReactCountryFlag from "react-country-flag"
-import { Heading } from "@medusajs/ui"
 
 const MainMenu = () => {
   const { collections } = useCollections()
@@ -36,9 +35,9 @@ const MainMenu = () => {
           </button>
         </div>
 
-        <Heading className="font-logo text-4xl text-primary uppercase">
+        <h1 className="font-logo text-4xl text-primary uppercase">
           Open Outdoors
-        </Heading>
+        </h1>
 
         <div className="flex-1 basis-0 flex justify-end text-base-content hover:text-secondary">
           <button onClick={close}>
@@ -79,7 +78,7 @@ const MainMenu = () => {
                 {collections.map((collection) => (
                   <li
                     key={collection.id}
-                    className="bg-gray-50 p-4 rounded-rounded"
+                    className="bg-base-200 p-4 rounded-rounded"
                   >
                     <Link href={`/collections/${collection.handle}`}>
                       <button
@@ -107,7 +106,7 @@ const MainMenu = () => {
                 <span className="text-base-content uppercase">Account</span>
                 <Link href={`/account/login`} passHref>
                   <button
-                    className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
+                    className="flex items-center justify-between border-b border-base-200 py-2 w-full"
                     onClick={close}
                   >
                     <span className="sr-only">Go to sign in page</span>
@@ -123,7 +122,7 @@ const MainMenu = () => {
                 </span>
                 <Link href={`/account`} passHref>
                   <button
-                    className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
+                    className="flex items-center justify-between border-b border-base-200 py-2 w-full"
                     onClick={close}
                   >
                     <span className="sr-only">Go to account page</span>
@@ -136,7 +135,7 @@ const MainMenu = () => {
             <div className="flex flex-col gap-y-4">
               <span className="text-base-content uppercase">Delivery</span>
               <button
-                className="flex items-center justify-between border-b border-gray-200 py-2"
+                className="flex items-center justify-between border-b border-base-200 py-2"
                 onClick={setScreenCountry}
               >
                 <span className="sr-only">

@@ -1,5 +1,4 @@
 import { ProductVariant } from "@medusajs/medusa"
-import { Container, Heading, Text } from "@medusajs/ui"
 import Thumbnail from "@modules/products/components/thumbnail"
 import Link from "next/link"
 
@@ -20,7 +19,7 @@ export type HitProps = {
 
 const Hit = ({ hit }: HitProps) => {
   return (
-    <Container
+    <div
       key={hit.id}
       className="grid grid-cols-[1fr] gap-2 w-full p-4 shadow-elevation-card-rest hover:shadow-elevation-card-hover     items-center justify-center"
     >
@@ -35,10 +34,10 @@ const Hit = ({ hit }: HitProps) => {
               {hit.collection_handle}
             </Link>
           )}
-          <Text className="text-base-content text-opacity-60">{hit.title}</Text>
+          <p className="text-base-content text-opacity-60">{hit.title}</p>
         </div>
       </div>
-    </Container>
+    </div>
   )
 }
 

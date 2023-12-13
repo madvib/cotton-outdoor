@@ -22,7 +22,7 @@ const OrderCard = ({ order }: OrderCardProps) => {
   return (
     <div className="bg-base-100 flex flex-col">
       <div className="uppercase text-large-semi mb-1">#{order.display_id}</div>
-      <div className="flex items-center divide-x divide-gray-200 text-small-regular text-base-content">
+      <div className="flex items-center divide-x divide-base-200 text-small-regular text-base-content">
         <span className="pr-2">
           {new Date(order.created_at).toDateString()}
         </span>

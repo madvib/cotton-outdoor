@@ -114,7 +114,7 @@ const Register = () => {
       <span className="text-center text-base-content text-small-regular mt-6">
         Already a member?{" "}
         <button
-          className="btn underline"
+          className="underline"
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
         >
           Sign in

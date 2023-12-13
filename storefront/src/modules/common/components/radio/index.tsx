@@ -20,13 +20,13 @@ const Radio = ({ checked }: { checked: boolean }) => {
       </button>
       {/* <div
         className={clsx(
-          "h-3 w-3 rounded-full border border-gray-200 flex items-center justify-center",
+          "h-3 w-3 rounded-full border border-base-200 flex items-center justify-center",
           {
             "border-gray-900": checked,
           }
         )}
       >
-        {checked && <div className="w-2 h-2 rounded-full bg-gray-900" />}
+        {checked && <div className="w-2 h-2 rounded-full bg-base-300" />}
       </div> */}
     </>
   )

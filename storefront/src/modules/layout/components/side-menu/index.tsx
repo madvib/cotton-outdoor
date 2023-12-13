@@ -2,8 +2,9 @@ import Link from "next/link"
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import { XMark, ArrowRightMini } from "@medusajs/icons"
-import { Text, clx, useToggleState } from "@medusajs/ui"
 import CountrySelect from "../country-select"
+import clsx from "clsx"
+import useToggleState from "@lib/hooks/use-toggle-state"
 
 const SideMenuItems = {
   Home: "/",
@@ -43,8 +44,8 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                 leaveFrom="opacity-100 backdrop-blur-2xl"
                 leaveTo="opacity-0"
               >
-                <Popover.Panel className="flex flex-col absolute w-1/3 2xl:w-1/4 h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
-                  <div className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6">
+                <Popover.Panel className="flex flex-col absolute w-1/3 2xl:w-1/4 h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-base-content m-2 backdrop-blur-2xl">
+                  <div className="flex flex-col h-full bg-base-300 bg-opacity-60 rounded-rounded justify-between p-6">
                     <div className="flex justify-end" id="xmark">
                       <button onClick={close}>
                         <XMark />
@@ -59,7 +60,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                           return (
                             <li key={name}>
                               <button
-                                className="text-3xl leading-10 hover:text-ui-fg-disabled"
+                                className="text-3xl leading-10 hover:text-accent"
                                 onClick={() => handleSearchClick(close)}
                               >
                                 {name}
@@ -71,7 +72,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                           <li key={name}>
                             <Link
                               href={href}
-                              className="text-3xl leading-10 hover:text-ui-fg-disabled"
+                              className="text-3xl leading-10 hover:text-accent"
                               onClick={close}
                             >
                               {name}
@@ -88,16 +89,16 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                       >
                         <CountrySelect toggleState={toggleState} />
                         <ArrowRightMini
-                          className={clx(
+                          className={clsx(
                             "transition-transform duration-150",
                             toggleState.state ? "-rotate-90" : ""
                           )}
                         />
                       </div>
-                      <Text className="flex justify-between txt-compact-small">
+                      <p className="flex justify-between txt-compact-small">
                         © {new Date().getFullYear()} Open Outdoors. All rights
                         reserved.
-                      </Text>
+                      </p>
                     </div>
                   </div>
                 </Popover.Panel>

@@ -1,18 +1,21 @@
-import { Heading } from "@medusajs/ui"
 import Link from "next/link"
 import React from "react"
 
 const Help = () => {
   return (
     <div className="mt-6">
-      <Heading className="text-base-semi">Need help?</Heading>
-      <div className="text-base-regular my-2">
+      <h3 className="text-base-content text-opacity-60">Need help?</h3>
+      <div className="text-base-content my-2">
         <ul className="gap-y-2 flex flex-col">
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact" className="hover:text-accent">
+              Contact
+            </Link>
           </li>
           <li>
-            <Link href="/contact">Returns & Exchanges</Link>
+            <Link href="/contact" className="hover:text-accent">
+              Returns & Exchanges
+            </Link>
           </li>
         </ul>
       </div>

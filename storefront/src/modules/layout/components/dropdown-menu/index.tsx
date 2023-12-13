@@ -52,7 +52,7 @@ const DropdownMenu = () => {
             >
               <Popover.Panel
                 static
-                className="absolute top-full inset-x-0 text-sm text-base-content z-30 border-y border-gray-200"
+                className="absolute top-full inset-x-0 text-sm text-base-content z-30 border-y border-base-200"
               >
                 <div className="relative bg-base-100 py-8">
                   <div className="flex items-start content-container">

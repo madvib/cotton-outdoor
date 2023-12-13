@@ -1,5 +1,4 @@
 import { Order } from "@medusajs/medusa"
-import { Heading, Text } from "@medusajs/ui"
 
 type OrderDetailsProps = {
   order: Order
@@ -17,35 +16,33 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
 
   return (
     <div>
-      <Text className="mt-8">
+      <p className="mt-8">
         We have sent the order confirmation details to{" "}
         <span className="text-ui-fg-medium-plus font-semibold">
           {order.email}
         </span>
         .
-      </Text>
-      <Text className="mt-2">
+      </p>
+      <p className="mt-2">
         Order date: {new Date(order.created_at).toDateString()}
-      </Text>
-      <Text className="mt-2 text-ui-fg-interactive">
-        Order number: {order.display_id}
-      </Text>
+      </p>
+      <p className="mt-2 text-accent">Order number: {order.display_id}</p>
 
       <div className="flex items-center text-compact-small gap-x-4 mt-4">
         {showStatus && (
           <>
-            <Text>
+            <p>
               Order status:{" "}
               <span className="text-base-content text-opacity-60 ">
                 {formatStatus(order.fulfillment_status)}
               </span>
-            </Text>
-            <Text>
+            </p>
+            <p>
               Payment status:{" "}
               <span className="text-base-content text-opacity-60 ">
                 {formatStatus(order.payment_status)}
               </span>
-            </Text>
+            </p>
           </>
         )}
       </div>

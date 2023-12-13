@@ -51,7 +51,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         <div className="flex flex-col text-base-content">
           <span
             className={clsx("text-xl-semi", {
-              "text-ui-fg-interactive": selectedPrice.price_type === "sale",
+              "text-accent": selectedPrice.price_type === "sale",
             })}
           >
             {selectedPrice.calculated_price}
@@ -66,7 +66,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
                   {selectedPrice.original_price}
                 </span>
               </p>
-              <span className="text-ui-fg-interactive">
+              <span className="text-accent">
                 -{selectedPrice.percentage_diff}%
               </span>
             </>
